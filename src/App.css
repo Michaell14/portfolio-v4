@@ -1,0 +1,44 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&display=swap'); */
+@import "tailwindcss";
+
+:root{
+  background-color: #F2F0EF;
+}
+
+.vertical-line {
+  border-left: 1px solid #9ca3af; /* You can adjust color and thickness */
+  height: 100vh; /* Set the desired height of your vertical line */
+  margin: 0 10px; /* Optional: Adds some space around the line */
+  display: inline-block; /* Or block, depending on your layout needs */
+}
+
+.horizontal-line {
+  color: #9ca3af;
+}
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.intel-one-mono-300 {
+  font-family: "Intel One Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.subtext {
+  color: #374151
+}
+
+.quote {
+  font-style: italic;
+  text-align: justify;
+}
