@@ -1,5 +1,5 @@
 import useStore from '../store';
-
+import React from 'react';
 
 function MovieArticle() {
     return (
@@ -37,7 +37,7 @@ function MovieArticle() {
 
 function LearnArticle() {
     return (
-        <div className="absolute top-0 left-0 bg-white p-2">
+        <div className="absolute top-0 left-0 bg-[#FF6B6B] p-2">
             <p className="text-lg font-bold">LEARNING</p>
             <p className="quote">Learning is the process of acquiring new knowledge, skills, values, beliefs, and habits. It is a dynamic and ongoing process that involves the development of cognitive, emotional, and social capabilities.</p>
             <p className="text-sm font-bold italic mt-2">I want to learn more about:</p>

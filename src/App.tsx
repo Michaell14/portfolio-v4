@@ -5,7 +5,7 @@ import './App.css'
 function App() {
     return (
         <>
-            <div className='flex flex-row w-full h-screen intel-one-mono-300'>
+            <div className='flex flex-row w-full h-screen jetbrains-mono-300'>
                 <div className="w-2/5 overflow-y-scroll hide-scrollbar px-6 mt-6">
                     <Profile />
                 </div>

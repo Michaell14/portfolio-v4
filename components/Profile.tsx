@@ -18,6 +18,7 @@ function ProfileHeader() {
 
 function Profile() {
     return (
+        
         <div className='h-full'>
             <div >
                 <ProfileHeader />

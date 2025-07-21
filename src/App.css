@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import "tailwindcss";
 
 :root{
@@ -35,10 +35,17 @@
 }
 
 .subtext {
-  color: #374151
+  color: #2E2E2E
 }
 
 .quote {
   font-style: italic;
   text-align: justify;
+}
+
+.jetbrains-mono-300 {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
 }

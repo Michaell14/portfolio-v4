@@ -33,7 +33,7 @@ function StyledText(props: { text: string, type: string }) {
         <span 
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className='bg-[#1f2937] text-white'>
+            className='bg-[#2E2E2E] text-white hover:cursor-pointer'>
             {props.text}
         </span>
     )
