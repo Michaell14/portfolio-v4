@@ -12,13 +12,13 @@ function StyledText(props: { text: string, type: string }) {
 
     const handleMouseEnter = () => {
         if (type === "me") {
-            setImageSrc(`./src/assets/me/1.jpg`);
+            setImageSrc(`/assets/me.jpg`);
         } else if (type === "climb") {
-            setImageSrc(`./src/assets/rockclimbing/1.gif`);
+            setImageSrc(`/assets/climbing.gif`);
         } else if (type === "music") {
-            setImageSrc(`./src/assets/music/1.jpg`);
+            setImageSrc(`/assets/music.jpg`);
         } else if (type === "travel") {
-            setImageSrc(`./src/assets/travel/1.jpg`);
+            setImageSrc(`/assets/travel.jpg`);
         } else if (type === "movie" || type === "learn") {
             setImageSrc(null);
         }
