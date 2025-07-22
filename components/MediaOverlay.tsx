@@ -57,7 +57,7 @@ function MediaOverlay() {
         
             {imageSrc && type !== "movie" && type !== "learn" &&
                 <div className="absolute top-5 left-0">
-                    <img alt="image of project" src={imageSrc} />
+                    <img alt="image of project" src={imageSrc} className="border border-black"/>
                 </div>}
         </div>
     )

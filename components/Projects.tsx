@@ -48,7 +48,7 @@ function Projects() {
                             {project.github && <p><a href={project.github} target='_blank' className='text-blue-500'>github</a></p>}
                         </div>
                         <div className='w-1/2'>
-                            <img src={project.image} alt={project.name} />
+                            <img src={project.image} alt={project.name} className="border border-black w-full h-[295px] object-cover"/>
                         </div>
                     </motion.div>
                 </div>
