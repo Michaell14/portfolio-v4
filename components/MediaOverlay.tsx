@@ -1,9 +1,8 @@
 import useStore from '../store';
-import React from 'react';
 
 function MovieArticle() {
     return (
-        <div className="absolute top-0 left-0 bg-white p-2">
+        <div className="absolute top-0 left-0 bg-white p-2 border border-black">
             <p className="text-lg font-bold">MOVIES</p>
             <p className="quote">
                 I love watching movies. I watch a lot of movies. I watch movies for fun. I watch movies to relax. I watch movies to learn. I watch movies to be inspired. I watch movies to be entertained. I watch movies to be moved. I want movies to make me cry. I want movies to make me laugh. I want movies to make me think. I want movies to make me feel.
@@ -37,7 +36,7 @@ function MovieArticle() {
 
 function LearnArticle() {
     return (
-        <div className="absolute top-0 left-0 bg-[#FF6B6B] p-2">
+        <div className="absolute top-0 left-0 bg-white p-2 border border-black">
             <p className="text-lg font-bold">LEARNING</p>
             <p className="quote">Learning is the process of acquiring new knowledge, skills, values, beliefs, and habits. It is a dynamic and ongoing process that involves the development of cognitive, emotional, and social capabilities.</p>
             <p className="text-sm font-bold italic mt-2">I want to learn more about:</p>

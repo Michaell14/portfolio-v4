@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 import "../src/App.css";
-import React from 'react';
 
 function ExperienceItem({ title, role, description, date }: { title: string, role: string, description: React.ReactNode, date: string }) {
     return (
@@ -38,7 +37,7 @@ function Experience() {
             <div className='text-sm gap-2 flex flex-col'>
                 {community.map((item, index) => (
                     <motion.div
-                    whileHover={{ backgroundColor: "#d1d5db", color: "#71717a", cursor: "pointer" }}
+                    whileHover={{ backgroundColor: "#d4d4d4", cursor: "pointer" }}
                     style={{ padding: 6, borderRadius: 6}}
                     key={index}
                     initial={{ opacity: .45 }}

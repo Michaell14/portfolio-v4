@@ -13,43 +13,44 @@ function Projects() {
                 <div key={project.name} className='flex flex-col gap-2 hover:cursor-pointer' onClick={() => toggleOpenedProject(index)}>
                     <p className='font-bold text-3xl select-none'>{project.name.toUpperCase()}</p>
 
-                    <div className='flex flex-row gap-5'>
-                        <motion.div
-                            style={{
-                                overflow: "hidden"
-                            }}
-                            variants={{
-                                open: {
-                                    opacity: 1,
-                                    height: "auto",
-                                    scale: 1,
-                                    transition: {
-                                        type: "tween", 
-                                        duration: .2
-                                    }
-                                },
-                                closed: {
-                                    height: "0px",
-                                    scale: 0.95,
-                                    transition: {
-                                        type: "tween",
-                                        duration: .2
-                                    }
+                    <motion.div
+                        style={{
+                            overflow: "hidden",
+                            display: "flex",
+                            flexDirection: "row",
+                            gap: "5em"
+                        }}
+                        variants={{
+                            open: {
+                                opacity: 1,
+                                height: "auto",
+                                scale: 1,
+                                transition: {
+                                    type: "tween",
+                                    duration: .2
                                 }
-                            }}
-                            initial="closed"
-                            animate={openedProjects[index] ? "open" : "closed"}
-                        >
-                            <div className='w-4/7'>
-                                <p className='subtext text-xs text-justify'>{project.description}</p>
-                                <p><a href={project.link} target='_blank' className='text-blue-500'>link</a></p>
-                                {project.github && <p><a href={project.github} target='_blank' className='text-blue-500'>github</a></p>}
-                            </div>
-                            <div className='w-3/7'>
-                                <img src={project.image} alt={project.name} />
-                            </div>
-                        </motion.div>
-                    </div>
+                            },
+                            closed: {
+                                height: "0px",
+                                scale: 0.98,
+                                transition: {
+                                    type: "tween",
+                                    duration: .2
+                                }
+                            }
+                        }}
+                        initial="closed"
+                        animate={openedProjects[index] ? "open" : "closed"}
+                    >
+                        <div className='w-1/3'>
+                            <p className='subtext text-xs text-justify'>{project.description}</p>
+                            <p><a href={project.link} target='_blank' className='text-blue-500'>link</a></p>
+                            {project.github && <p><a href={project.github} target='_blank' className='text-blue-500'>github</a></p>}
+                        </div>
+                        <div className='w-1/2'>
+                            <img src={project.image} alt={project.name} />
+                        </div>
+                    </motion.div>
                 </div>
             ))}
         </div>
@@ -85,7 +86,7 @@ const projects = [
         link: "https://www.google.com",
         github: "https://github.com/Michaell14/Arduino-Controller-for-Hotdog-Unity-Game"
     },
-    
+
 ]
 
 
