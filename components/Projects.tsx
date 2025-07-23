@@ -1,6 +1,7 @@
 import MediaOverlay from './MediaOverlay';
 import useStore from '../store';
 import { motion } from 'motion/react';
+import { FaGithubAlt, FaLink } from "react-icons/fa";
 
 function Projects() {
     const { openedProjects, toggleOpenedProject } = useStore();
@@ -11,7 +12,7 @@ function Projects() {
             <MediaOverlay />
             {projects.map((project, index) => (
                 <div key={project.name} className='flex flex-col gap-2 hover:cursor-pointer' onClick={() => toggleOpenedProject(index)}>
-                    <p className='font-bold text-3xl select-none'>{project.name.toUpperCase()}</p>
+                    <p className='text-4xl select-none relative z-0 special-gothic-expanded-one-regular'>{project.name.toUpperCase()}<span className='subtext text-xs ml-2 absolute top-1'>[{openedProjects[index] ? "close" : "expand"}]</span></p>
 
                     <motion.div
                         style={{
@@ -43,12 +44,14 @@ function Projects() {
                         animate={openedProjects[index] ? "open" : "closed"}
                     >
                         <div className='w-1/3'>
-                            <p className='subtext text-xs text-justify'>{project.description}</p>
-                            <p><a href={project.link} target='_blank' className='text-blue-500'>link</a></p>
-                            {project.github && <p><a href={project.github} target='_blank' className='text-blue-500'>github</a></p>}
+                            <p className='subtext text-xs'>{project.description}</p>
+                            <p className='flex gap-2'>
+                                <a href={project.link} target='_blank' className='text-blue-500'><FaLink className='text-sm text-black' /></a>
+                                {project.github && <a href={project.github} target='_blank' className='text-blue-500'><FaGithubAlt className='text-sm text-black' /></a>}
+                            </p>
                         </div>
                         <div className='w-1/2'>
-                            <img src={project.image} alt={project.name} className="border border-black w-full h-[295px] object-cover"/>
+                            <img src={project.image} alt={project.name} className="border border-black w-full max-h-[250px] object-cover"/>
                         </div>
                     </motion.div>
                 </div>
