@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&family=Yantramanav:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 :root{
-  background-color: #F2F0EF;
+  background-color: #fafaf9;
 }
 
 .vertical-line {
@@ -35,8 +37,12 @@
   font-style: normal;
 }
 
-.subtext {
-  color: #2E2E2E
+.special-color {
+  color: #9ca3af;
+}
+
+.minitext-color{
+  color: #374151;
 }
 
 .quote {
@@ -51,8 +57,16 @@
   font-style: normal;
 }
 
-.special-gothic-expanded-one-regular {
-  font-family: "Special Gothic Expanded One", sans-serif;
+/* .special {
+  font-family: "Vazirmatn", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+} */
+
+.special{
+  font-family: "Inter Tight", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }

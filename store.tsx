@@ -20,7 +20,7 @@ const useStore = create<Store>((set, get) => ({
     type: null,
     setImageSrc: (imageSrc: string | null) => set({ imageSrc }),
     setType: (type: string | null) => set({ type }),
-    openedProjects: [true, false, false, false],
+    openedProjects: [false, false, false, false],
     toggleOpenedProject: (index: number) => set((state) => ({ openedProjects: state.openedProjects.map((current, i) => i === index ? !current : current )})),
     locked: {
         "me": false,
