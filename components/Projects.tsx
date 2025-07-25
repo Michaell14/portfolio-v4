@@ -6,9 +6,9 @@ function Projects() {
     const { openedProjects, toggleOpenedProject } = useStore();
 
     return (
-        <div className='text-sm flex flex-col relative min-h-[60vh]'>
-            <p className='italic text-xs text-gray-500'>PROJECTS</p>
-            <div className='flex flex-col gap-2 mt-14'>
+        <div className='text-sm flex flex-col relative mb-20'>
+            <p className='text-xs text-gray-500 secondary-font italic!'>PROJECTS</p>
+            <div className='flex flex-col gap-2 mt-12'>
             {projects.map((project, index) => (
                 <div key={project.name} className={`flex flex-col gap-2 hover:cursor-pointer ${!openedProjects[index] && "hover:bg-[#d4d4d4]"} py-1`} onClick={() => toggleOpenedProject(index)}>
                     <p className='text-[2.5rem] leading-none break-all select-none relative z-0 special'>{project.name.toUpperCase()}</p>
@@ -42,8 +42,8 @@ function Projects() {
                         initial="closed"
                         animate={openedProjects[index] ? "open" : "closed"}
                     >
-                        <div className='w-1/3'>
-                            <p className='minitext-color text-xs'>{project.description}</p>
+                        <div className='w-1/3 secondary-font'>
+                            <p className='minitext-color text-sm'>{project.description}</p>
                             <p className='flex gap-2 mt-2'>
                                 {project.link && <a href={project.link} target='_blank' className='text-blue-500'><FaLink className='text-sm text-black' /></a>}
                                 {project.github && <a href={project.github} target='_blank' className='text-blue-500'><FaGithubAlt className='text-sm text-black' /></a>}
@@ -77,7 +77,7 @@ const projects = [
     },
     {
         name: "06_PlayDeck_2023",
-        description: "This project transforms physical album covers into smart music triggers using a Raspberry Pi 4, RFID technology, and the Spotify API. Simply place an album cover with an embedded RFID tag onto the scanner to instantly play the corresponding Spotify playlist or album through connected speakers.",
+        description: "Place an album cover with an embedded RFID tag onto the scanner to play the corresponding track using Spotify.",
         image: "/assets/musicbox.webp",
         link: null,
         github: null

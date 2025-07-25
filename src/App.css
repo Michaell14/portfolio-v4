@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&family=Yantramanav:wght@100;300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
 @import "tailwindcss";
 
 :root{
@@ -30,13 +29,6 @@
   scrollbar-width: none;  /* Firefox */
 }
 
-.intel-one-mono-300 {
-  font-family: "Intel One Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-}
-
 .special-color {
   color: #9ca3af;
 }
@@ -50,19 +42,19 @@
   text-align: justify;
 }
 
-.jetbrains-mono-300 {
+.secondary-font {
   font-family: "JetBrains Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-}
-
-/* .special {
-  font-family: "Vazirmatn", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-} */
+}
+
+.primary-font {
+  font-family: "Alegreya", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
 
 .special{
   font-family: "Inter Tight", sans-serif;

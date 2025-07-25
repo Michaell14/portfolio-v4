@@ -3,9 +3,9 @@ import ExperienceItem from "./ExperienceItem";
 
 function Community() {
     return (
-        <div>
+        <div className="secondary-font">
             <p className='italic text-xs text-gray-500 mb-5'>COMMUNITY</p>
-            <div className='text-sm gap-2 flex flex-col h-[50vh] mt-14'>
+            <div className='text-sm gap-2 flex flex-col my-14'>
                 {community.map((item, index) => (
                     <motion.div
                         key={index}

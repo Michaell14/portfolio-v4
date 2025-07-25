@@ -63,7 +63,7 @@ function MediaOverlay() {
             {type === "learn" && <LearnArticle />}
 
             {imageSrc && type !== "movie" && type !== "learn" &&
-                <img alt="image of project" src={imageSrc} className="border border-black z-50" />
+                <img alt="Image!" src={imageSrc} className="border border-black z-50 h-[40vh]" />
             }
         </div>
     )
