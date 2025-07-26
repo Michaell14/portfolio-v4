@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const ImageTooltip = ({ text, imageUrl, imageAlt }: { text: string, imageUrl: string, imageAlt: string }) => {
+const ImageToolTip = ({ text, imageUrl, imageAlt }: { text: string, imageUrl: string, imageAlt: string }) => {
     const [isHovered, setIsHovered] = useState(false);
     const type = imageUrl.split('/').pop()?.split('.').shift();
     if (type === "gif") {
@@ -75,4 +75,4 @@ const ImageTooltip = ({ text, imageUrl, imageAlt }: { text: string, imageUrl: st
     );
 };
 
-export default ImageTooltip;
+export default ImageToolTip;
