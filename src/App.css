@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
 @import "tailwindcss";
 
 :root{
-  background-color: #fafaf9;
+  /* background-color: #fafaf9; */
+  background-color: white;
 }
 
 .vertical-line {
@@ -30,11 +32,13 @@
 }
 
 .special-color {
-  color: #9ca3af;
+  /* color: #9ca3af; */
+  color: white;
 }
 
 .minitext-color{
-  color: #374151;
+  /* color: #374151; */
+  color: white;
 }
 
 .quote {
@@ -49,11 +53,20 @@
   font-style: normal;
 }
 
-.primary-font {
+/* .primary-font {
   font-family: "Alegreya", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+} */
+
+.primary-font {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 .special{

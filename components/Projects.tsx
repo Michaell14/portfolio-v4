@@ -6,12 +6,12 @@ function Projects() {
     const { openedProjects, toggleOpenedProject } = useStore();
 
     return (
-        <div className='text-sm flex flex-col relative mb-20'>
+        <div className='text-sm flex flex-col relative mb-40'>
             <p className='text-xs text-gray-500 secondary-font italic!'>PROJECTS</p>
             <div className='flex flex-col gap-2 mt-12'>
             {projects.map((project, index) => (
                 <div key={project.name} className={`flex flex-col gap-2 hover:cursor-pointer ${!openedProjects[index] && "hover:bg-[#d4d4d4]"} py-1`} onClick={() => toggleOpenedProject(index)}>
-                    <p className='text-[2.5rem] leading-none break-all select-none relative z-0 special'>{project.name.toUpperCase()}</p>
+                    <p className='text-[2.7rem] leading-none break-all select-none relative z-0 primary-font'>{project.name.toUpperCase()}</p>
 
                     <motion.div
                         style={{
@@ -43,7 +43,7 @@ function Projects() {
                         animate={openedProjects[index] ? "open" : "closed"}
                     >
                         <div className='w-1/3 secondary-font'>
-                            <p className='minitext-color text-sm'>{project.description}</p>
+                            <p className=' text-sm'>{project.description}</p>
                             <p className='flex gap-2 mt-2'>
                                 {project.link && <a href={project.link} target='_blank' className='text-blue-500'><FaLink className='text-sm text-black' /></a>}
                                 {project.github && <a href={project.github} target='_blank' className='text-blue-500'><FaGithubAlt className='text-sm text-black' /></a>}

@@ -1,29 +1,121 @@
 import "../src/App.css"
-import { motion } from "motion/react";
+import { motion, useInView } from "motion/react";
 import ImageToolTip from "./ImageToolTip";
+import { Children, isValidElement, useMemo, useRef } from "react";
 
-function Superscript({ text }: { text: string }) {
+function Superscript({ text, size }: { text: string, size: string }) {
     return (
-        <span className="align-super text-sm" style={{ verticalAlign: 'super' }}>{text}</span>
+        <span className={`align-super ${size}`} style={{ verticalAlign: 'super' }}>{text}</span>
     )
 }
 
+const TypewriterEffect = ({ children, className }: { children: React.ReactNode, className: string }) => {
+    // We use React.useMemo to process the children only when they change.
+    const elementsToAnimate = useMemo(() => {
+        const elements: React.ReactNode[] = [];
+        // React.Children.forEach is used to iterate over children safely.
+        Children.forEach(children, child => {
+            if (typeof child === 'string') {
+                // If the child is a string, we split it into words.
+                // Each word will be an individual animation item.
+                child.split(' ').forEach(word => {
+                    if (word) { // Ensure not to push empty strings from multiple spaces
+                        elements.push(word);
+                    }
+                });
+            } else if (isValidElement(child)) {
+                // If the child is a React element (e.g., <ImageToolTip />),
+                // we push it as a single unit to be animated.
+                elements.push(child);
+            }
+        });
+        return elements;
+    }, [children]);
+
+    // Ref for the container element to track when it's in view.
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
+
+    // Variants for the container element.
+    // This will handle the staggered animation of the children.
+    const containerVariants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.06, // Time delay between each element's animation
+            },
+        },
+    };
+
+    // Variants for each individual element (word or component).
+    const elementVariants = {
+        hidden: {
+            opacity: 0,
+            y: 20,
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: 'spring',
+                damping: 12,
+                stiffness: 100,
+            },
+        },
+    };
+
+    return (
+        // The main container for the animated text.
+        <motion.p
+            ref={ref}
+            className={className}
+            variants={containerVariants}
+            initial="hidden"
+            // Animate to "visible" only when the component is in view
+            animate={isInView ? "visible" : "hidden"}
+        >
+            {/* Map over the processed elements to create a motion.span for each one. */}
+            {elementsToAnimate.map((element, index) => (
+                <motion.span
+                    key={index}
+                    variants={elementVariants}
+                    // Add a space after each element for proper spacing.
+                    // Using 'inline-block' is crucial for the transform (y) to work.
+                    style={{ display: 'inline-block', marginRight: '0.25em' }}
+                >
+                    {element}
+                </motion.span>
+            ))}
+        </motion.p>
+    );
+};
+
+
+
 function Profile() {
     return (
-        <div className='gap-2 flex flex-col mt-30 h-[85vh] primary-font text-justify'>
-            <motion.div
-                initial={{ opacity: .45 }}
-                whileInView={{ opacity: 1, transition: { duration: .3 } }}
-                viewport={{ amount: .8 }}
-            >
-                <span className='text-gray-950 text-2xl'>Hey, I'm <ImageToolTip text="Michael L." imageUrl="assets/me.jpg" imageAlt="me" />, a student, engineer, and design enthusiast from Maryland! I'm studying Computer Science <Superscript text="(w/ Design + Math)" /> at UPenn, while building community-driven applications.
-                    My work focuses on creating digital spaces where people can learn together and build meaningful connections.
-                </span>
-                <br/>
-                <br/>
-                <span className='text-gray-950 text-xl'>I am currently in NYC, solving problems at Kensho. Outside of work, I can be found <ImageToolTip text="climbing" imageUrl="assets/climbing.gif" imageAlt="climbing" />, <ImageToolTip text="traveling" imageUrl="assets/travel.jpg" imageAlt="traveling" />, exploring the city, and <ImageToolTip text="learning a lot" imageUrl="assets/learn.jpg" imageAlt="learning" />. I also watch <ImageToolTip text="movies" imageUrl="assets/movie.jpg" imageAlt="films" />!
-                </span>
+        <div className='gap-2 flex flex-col mt-28 h-[75vh] primary-font'>
+            <TypewriterEffect className="text-5xl">
+                Hey, I'm <ImageToolTip text="Michael L." imageUrl="assets/me.jpg" imageAlt="me" />, a student<Superscript text="1" size="text-2xl" />, engineer<Superscript text="2" size="text-2xl" />, and design enthusiast<Superscript text="3" size="text-2xl" /> at UPenn! 
                 
+            </TypewriterEffect>
+            <br />
+            <br />
+            
+            <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1, transition: { duration: 1, delay: 1.4 } }}
+                viewport={{ once: true }}>
+                <span className='text-2xl'>I'm studying Computer Science <Superscript text="(w/ Design + Math)" size="text-xl" /> at UPenn, while building community-driven applications.
+                My work focuses on creating digital spaces where people can learn together and build meaningful connections.
+                </span>
+            </motion.div>
+            <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1, transition: { duration: 1, delay: 1.75 } }}
+                viewport={{ once: true }}>
+                <span className='text-2xl'>I am currently in NYC, solving problems at Kensho. Outside of work, I can be found <ImageToolTip text="climbing" imageUrl="assets/climbing.gif" imageAlt="climbing" />, <ImageToolTip text="traveling" imageUrl="assets/travel.jpg" imageAlt="traveling" />, exploring the city, and <ImageToolTip text="learning a lot" imageUrl="assets/learn.jpg" imageAlt="learning" />. I also watch <ImageToolTip text="movies" imageUrl="assets/movie.jpg" imageAlt="films" />!
+                </span>
             </motion.div>
         </div>
     )

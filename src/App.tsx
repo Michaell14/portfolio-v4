@@ -8,20 +8,22 @@ import './App.css'
 
 function App() {
     return (
-        <>
-            <div className='w-[700px] mx-auto mt-5'>
+        <div className='relative overflow-hidden'>
+            <div className='max-w-5xl mx-auto mt-10 '>
                 <Header />
                 <Profile />
-                <hr className='horizontal-line mt-2 mb-5' />
+
+                <hr className='horizontal-line mb-5' />
                 <Experience/>
                 <hr className='horizontal-line mt-7 mb-5' />
                 <Community/>
                 <hr className='horizontal-line mt-7 mb-5' />
                 <Projects/>
-                
                 <Footer />
             </div>
-        </>
+            <img src="home_ex/ascii-animation-slow-invert.gif" alt="ascii-animation" className='absolute h-1/4 -bottom-0 -right-10 z-[-1]' />
+
+        </div>
     )
 }
 
