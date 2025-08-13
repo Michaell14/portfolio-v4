@@ -3,13 +3,7 @@ import { useState } from 'react';
 const ImageToolTip = ({ text, imageUrl, imageAlt }: { text: string, imageUrl: string, imageAlt: string }) => {
     const [isHovered, setIsHovered] = useState(false);
     const type = imageUrl.split('/').pop()?.split('.').shift();
-    if (type === "gif") {
-        return (
-            <div className="relative inline-block">
-                <img src={imageUrl} alt={imageAlt} className="max-w-xs h-auto rounded" />
-            </div>
-        );
-    }
+   
     return (
         <div className="relative inline-block"> {/* Essential for positioning the tooltip */}
             <span
@@ -20,17 +14,17 @@ const ImageToolTip = ({ text, imageUrl, imageAlt }: { text: string, imageUrl: st
                 {text}
             </span>
 
-            {isHovered && (type === "me" || type === "climbing" || type === "music" || type === "travel") && (
+            {isHovered && (type === "bridge" || type === "climbing" || type === "music" || type === "travel") && (
                 <div
                     className="absolute z-10 p-2 bg-white border border-gray-300 rounded shadow-lg"
                     style={{ top: 'calc(100% + 10px)', left: '50%', transform: 'translateX(-50%)' }} // Position below and center
                 >
-                    <img src={imageUrl} alt={imageAlt} className="max-w-xs h-auto rounded" />
+                    <img src={imageUrl} alt={imageAlt} className="max-w-lg h-auto rounded max-h-[380px]" />
                 </div>
             )}
             {isHovered && (type === "movie" || type === "learn") && (
                 <div
-                    className="absolute z-10 p-2 bg-white border border-gray-300 rounded shadow-lg w-[460px] text-left"
+                    className="absolute z-10 p-2 bg-white border border-gray-300 rounded shadow-lg w-[500px] text-left"
                     style={{ top: 'calc(100% + 10px)', left: '50%', transform: 'translateX(-50%)' }} // Position below and center
                 >
                     {type === "movie" ? (

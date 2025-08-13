@@ -50,7 +50,7 @@ function Projects() {
                             </p>
                         </div>
                         <div className='w-1/2'>
-                            <img src={project.image} alt={project.name} className="border border-black w-full max-h-[250px] object-cover"/>
+                            <img src={project.image} alt={project.name} className="border border-black w-full max-h-[350px] object-cover"/>
                         </div>
                     </motion.div>
                 </div>
