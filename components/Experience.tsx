@@ -27,19 +27,19 @@ const experience = [
     {
         title: "Kensho Technologies",
         role: "Software Engineer Intern",
-        description: <p className="text-sm">Documents -&gt; Extract, NERD, Annotations -&gt; S&P Global</p>,
+        description: <p className="text-sm text-gray-700">Documents -&gt; Extract, NERD, Annotations -&gt; S&P Global</p>,
         date: "05/2025 - 08/2025"
     },
     {
         title: "Wealth.com",
         role: "Full-Stack Intern",
-        description: <p className="text-sm">Scaling Full-Stack @ $30M Series A startup.</p>,
+        description: <p className="text-sm text-gray-700">Scaling Full-Stack @ $30M Series A startup.</p>,
         date: "01/2025 - 05/2025"
     },
     {
         title: "iLotusLand",
         role: "Software Engineer Intern",
-        description: <p className="text-sm">Predictive classification models for environmental data in South East Asia.</p>,
+        description: <p className="text-sm text-gray-700">Predictive classification models for environmental data in South East Asia.</p>,
         date: "06/2024 - 08/2024"
     },
 ]

@@ -10,7 +10,7 @@ function App() {
     return (
         <>
 
-            <div className='relative overflow-hidden'>
+            <div className='relative overflow-hidden px-6 md:px-10 lg:px-0'>
                 <div className='max-w-4xl mx-auto mt-10 '>
                     <Header />
                     <Profile />
@@ -22,7 +22,8 @@ function App() {
                     <Projects />
                     <Footer />
                 </div>
-                <img src="home_ex/ascii-animation-slow-invert2.gif" alt="ascii-animation" className='absolute h-1/4 -bottom-0 -right-10 z-[-1]' />
+                <img src="home_ex/ascii-animation-slow-invert2.gif" alt="ascii-animation" className='absolute h-1/4 -bottom-0 -right-10 z-[-1]
+                hidden lg:block' />
 
             </div >
         </>

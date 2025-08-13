@@ -9,52 +9,58 @@ function Projects() {
         <div className='text-sm flex flex-col relative mb-40'>
             <p className='text-xs text-gray-500 secondary-font italic!'>PROJECTS</p>
             <div className='flex flex-col gap-2 mt-12'>
-            {projects.map((project, index) => (
-                <div key={project.name} className={`flex flex-col gap-2 hover:cursor-pointer ${!openedProjects[index] && "hover:bg-[#d4d4d4]"} py-1`} onClick={() => toggleOpenedProject(index)}>
-                    <p className='text-[2.7rem] leading-none break-all select-none relative z-0 primary-font'>{project.name.toUpperCase()}</p>
-
-                    <motion.div
-                        style={{
-                            overflow: "hidden",
-                            display: "flex",
-                            flexDirection: "row",
-                            gap: "5em"
-                        }}
-                        variants={{
-                            open: {
-                                opacity: 1,
-                                height: "auto",
-                                scale: 1,
-                                transition: {
-                                    type: "tween",
-                                    duration: .2
+                {projects.map((project, index) => (
+                    <div key={project.name} className={`flex flex-col gap-2 hover:cursor-pointer ${!openedProjects[index] && "hover:bg-[#d4d4d4]"} py-1`} onClick={() => toggleOpenedProject(index)}>
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1, transition: { duration: .6 } }}
+                            viewport={{ amount: .95 }}
+                        >
+                            <p className='lg:text-[2.7rem] text-[2rem] leading-none break-all select-none relative z-0 primary-font'>{project.name.toUpperCase()}</p>
+                        </motion.div>
+                        <motion.div
+                            style={{
+                                overflow: "hidden",
+                                display: "flex",
+                                flexDirection: "row",
+                                gap: "5em"
+                            }}
+                            variants={{
+                                open: {
+                                    opacity: 1,
+                                    height: "auto",
+                                    scale: 1,
+                                    transition: {
+                                        type: "tween",
+                                        duration: .2
+                                    }
+                                },
+                                closed: {
+                                    height: "0px",
+                                    scale: 0.98,
+                                    transition: {
+                                        type: "tween",
+                                        duration: .2
+                                    }
                                 }
-                            },
-                            closed: {
-                                height: "0px",
-                                scale: 0.98,
-                                transition: {
-                                    type: "tween",
-                                    duration: .2
-                                }
-                            }
-                        }}
-                        initial="closed"
-                        animate={openedProjects[index] ? "open" : "closed"}
-                    >
-                        <div className='w-1/3 secondary-font'>
-                            <p className=' text-sm'>{project.description}</p>
-                            <p className='flex gap-2 mt-2'>
-                                {project.link && <a href={project.link} target='_blank' className='text-blue-500'><FaLink className='text-sm text-black' /></a>}
-                                {project.github && <a href={project.github} target='_blank' className='text-blue-500'><FaGithubAlt className='text-sm text-black' /></a>}
-                            </p>
-                        </div>
-                        <div className='w-1/2'>
-                            <img src={project.image} alt={project.name} className="border border-black w-full max-h-[350px] object-cover"/>
-                        </div>
-                    </motion.div>
-                </div>
-            ))}
+                            }}
+                            initial="closed"
+                            viewport={{ once: true }}
+                            animate={openedProjects[index] ? "open" : "closed"}
+                        >
+                            <div className='w-1/3 secondary-font'>
+                                <p className=' text-sm'>{project.description}</p>
+                                <p className='flex gap-2 mt-2'>
+                                    {project.link && <a href={project.link} target='_blank' className='text-blue-500'><FaLink className='text-sm text-black' /></a>}
+                                    {project.github && <a href={project.github} target='_blank' className='text-blue-500'><FaGithubAlt className='text-sm text-black' /></a>}
+                                </p>
+                            </div>
+                            <div className='w-1/2'>
+                                <img src={project.image} alt={project.name} className="border border-black w-full max-h-[350px] object-cover" />
+                            </div>
+                        </motion.div>
+                    </div>
+                ))}
             </div>
         </div>
     )

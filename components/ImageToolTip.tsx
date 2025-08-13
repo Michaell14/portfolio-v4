@@ -1,19 +1,25 @@
 import { useState } from 'react';
+import { motion } from 'motion/react';
 
-const ImageToolTip = ({ text, imageUrl, imageAlt }: { text: string, imageUrl: string, imageAlt: string }) => {
+const ImageToolTip = ({ text, imageUrl, imageAlt, color }: { text: string, imageUrl: string, imageAlt: string, color: string }) => {
     const [isHovered, setIsHovered] = useState(false);
     const type = imageUrl.split('/').pop()?.split('.').shift();
-   
+
     return (
         <div className="relative inline-block"> {/* Essential for positioning the tooltip */}
-            <span
-                className={`cursor-pointer underline`}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
+            <motion.div
+                initial={{ color: color }}
+                whileHover={{ color: "red" }}
+                transition={{ duration: .3 }}
             >
-                {text}
-            </span>
-
+                <span
+                    className={`cursor-pointer underline`}
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                >
+                    {text}
+                </span>
+            </motion.div>
             {isHovered && (type === "bridge" || type === "climbing" || type === "music" || type === "travel") && (
                 <div
                     className="absolute z-10 p-2 bg-white border border-gray-300 rounded shadow-lg"
@@ -30,7 +36,7 @@ const ImageToolTip = ({ text, imageUrl, imageAlt }: { text: string, imageUrl: st
                     {type === "movie" ? (
                         <>
                             <p className="text-sm font-bold italic mt-2">Some notable movies that I've watched are:</p>
-                            <ul className='text-sm columns-2'>                                
+                            <ul className='text-sm columns-2'>
                                 <li>Oldboy</li>
                                 <li>Saw</li>
                                 <li>How to make millions before grandma dies</li>

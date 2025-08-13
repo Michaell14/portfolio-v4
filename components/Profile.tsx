@@ -66,7 +66,7 @@ const TypewriterEffect = ({ children, className, delay = 0 }: { children: React.
 
     return (
         // The main container for the animated text.
-        <motion.p
+        <motion.div
             ref={ref}
             className={className}
             variants={containerVariants}
@@ -86,7 +86,7 @@ const TypewriterEffect = ({ children, className, delay = 0 }: { children: React.
                     {element}
                 </motion.span>
             ))}
-        </motion.p>
+        </motion.div>
     );
 };
 
@@ -95,10 +95,11 @@ const TypewriterEffect = ({ children, className, delay = 0 }: { children: React.
 function Profile() {
     return (
         <div className='gap-2 flex flex-col mt-16 primary-font'>
-            <TypewriterEffect className="text-[48px] leading-14" delay={0}>
-                Hey, I'm <ImageToolTip text="Michael" imageUrl="home_ex/bridge.JPG" imageAlt="me" />, a student<Superscript text="1" size="text-2xl" />, engineer<Superscript text="2" size="text-2xl" />, and design enthusiast<Superscript text="3" size="text-2xl" /> from MD.
-
-
+            <TypewriterEffect className="text-[32px] leading-10 lg:text-[48px] lg:leading-14 hidden lg:block" delay={0}>
+                Hey, I'm <ImageToolTip text="Michael" imageUrl="home_ex/bridge.JPG" imageAlt="me" color="black" />, a student<Superscript text="1" size="text-2xl" />, engineer<Superscript text="2" size="text-2xl" />, and design enthusiast<Superscript text="3" size="text-2xl" /> from MD.
+            </TypewriterEffect>
+            <TypewriterEffect className="text-[32px] leading-10 lg:text-[48px] lg:leading-14 block lg:hidden" delay={0}>
+                Hey, I'm <ImageToolTip text="Michael" imageUrl="home_ex/bridge.JPG" imageAlt="me" color="black" />, a student, engineer, and design enthusiast from MD.
             </TypewriterEffect>
             <br />
             <br />
@@ -107,7 +108,7 @@ function Profile() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .5, delay: 1.3 } }}
                 viewport={{ once: true }}>
-                <span className='text-2xl text-gray-900'>
+                <span className='text-xl lg:text-2xl text-gray-700'>
                     I'm studying Computer Science <Superscript text="(w/ Design + Math)" size="text-xl" /> at UPenn, exploring human-computer interaction and design systems. My work focuses on building community-driven applications that people enjoy using.
                 </span>
             </motion.div>
@@ -115,8 +116,8 @@ function Profile() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .5, delay: 1.9 } }}
                 viewport={{ once: true }}>
-                <span className='text-2xl text-gray-900'>
-                    My ideal day involves generous amounts of <ImageToolTip text="falling off walls" imageUrl="assets/climbing.gif" imageAlt="climbing" />, <ImageToolTip text="exploring earth" imageUrl="assets/travel.jpg" imageAlt="traveling" />, <ImageToolTip text="watching movies" imageUrl="assets/movie.jpg" imageAlt="films" />, and <ImageToolTip text="learning a lot" imageUrl="assets/learn.jpg" imageAlt="learning" />!
+                <span className='text-xl lg:text-2xl text-gray-700'>
+                    My ideal day involves generous amounts of <ImageToolTip text="falling off walls" imageUrl="assets/climbing.gif" imageAlt="climbing" color="#374151" />, <ImageToolTip text="exploring earth" imageUrl="assets/travel.jpg" imageAlt="traveling" color="#374151" />, <ImageToolTip text="watching movies" imageUrl="assets/movie.jpg" imageAlt="films" color="#374151" />, and <ImageToolTip text="learning a lot" imageUrl="assets/learn.jpg" imageAlt="learning" color="#374151" />!
                 </span>
             </motion.div>
 
@@ -124,7 +125,7 @@ function Profile() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .5, delay: 2.5 } }}
                 viewport={{ once: true }}>
-                <div className="flex h-[200px] gap-4 mt-8 mb-20 overflow-x-scroll">
+                <div className="flex h-[150px] lg:h-[200px] gap-4 mt-8 mb-20 overflow-x-scroll">
                     <img src="home_ex/china.jpg" alt="me" className="rounded-md" />
                     <img src="home_ex/nice.JPG" alt="me" className="rounded-md" />
                     <img src="home_ex/meme.jpg" alt="me" className="rounded-md" />
