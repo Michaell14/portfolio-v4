@@ -101,8 +101,6 @@ function Profile() {
             <TypewriterEffect className="text-[32px] leading-10 lg:text-[48px] lg:leading-14 block lg:hidden">
                 Hey, I'm <ImageToolTip text="Michael" imageUrl="home_ex/bridge.JPG" imageAlt="me" color="black" />, a student, engineer, and design enthusiast from MD.
             </TypewriterEffect>
-            <br />
-            <br />
 
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
