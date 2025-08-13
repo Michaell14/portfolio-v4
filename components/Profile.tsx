@@ -117,7 +117,7 @@ function Profile() {
                 whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .4, delay: 1.7 } }}
                 viewport={{ once: true }}>
                 <span className='text-xl lg:text-2xl text-gray-700'>
-                    My ideal day involves generous amounts of <ImageToolTip text="falling off walls" imageUrl="assets/climbing.gif" imageAlt="climbing" color="#374151" />, <ImageToolTip text="exploring earth" imageUrl="assets/travel.jpg" imageAlt="traveling" color="#374151" />, <ImageToolTip text="watching movies" imageUrl="assets/movie.jpg" imageAlt="films" color="#374151" />, and <ImageToolTip text="learning a lot" imageUrl="assets/learn.jpg" imageAlt="learning" color="#374151" />!
+                    My ideal day involves generous amounts of <ImageToolTip text="falling off walls" imageUrl="assets/climbing.gif" imageAlt="climbing" color="#374151" />, <ImageToolTip text="exploring earth" imageUrl="assets/travel.webp" imageAlt="traveling" color="#374151" />, <ImageToolTip text="watching movies" imageUrl="assets/movie.jpg" imageAlt="films" color="#374151" />, and <ImageToolTip text="learning a lot" imageUrl="assets/learn.jpg" imageAlt="learning" color="#374151" />!
                 </span>
             </motion.div>
 
@@ -127,7 +127,7 @@ function Profile() {
                 viewport={{ once: true }}>
                 <div className="flex h-[150px] lg:h-[200px] gap-4 mt-8 mb-20 overflow-x-scroll">
                     <img src="home_ex/china.jpg" alt="me" className="rounded-md" />
-                    <img src="home_ex/nice.JPG" alt="me" className="rounded-md" />
+                    <img src="home_ex/nice.webp" alt="me" className="rounded-md" />
                     <img src="home_ex/meme.jpg" alt="me" className="rounded-md" />
                 </div>
             </motion.div>
