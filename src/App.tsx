@@ -14,7 +14,7 @@ function App() {
                 <div className='max-w-4xl mx-auto mt-10 '>
                     <Header />
                     <Profile />
-                    <hr className='horizontal-line mt-10 mb-5' />
+                    <hr className='horizontal-line mt-16 mb-5' />
                     <Experience />
                     <hr className='horizontal-line mt-7 mb-5' />
                     <Community />

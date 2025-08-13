@@ -9,7 +9,7 @@ function Superscript({ text, size }: { text: string, size: string }) {
     )
 }
 
-const TypewriterEffect = ({ children, className }: { children: React.ReactNode, className: string }) => {
+const TypewriterEffect = ({ children, className, delay = 0 }: { children: React.ReactNode, className: string, delay: number }) => {
     // We use React.useMemo to process the children only when they change.
     const elementsToAnimate = useMemo(() => {
         const elements: React.ReactNode[] = [];
@@ -95,7 +95,7 @@ const TypewriterEffect = ({ children, className }: { children: React.ReactNode, 
 function Profile() {
     return (
         <div className='gap-2 flex flex-col mt-16 primary-font'>
-            <TypewriterEffect className="text-[48px] leading-14">
+            <TypewriterEffect className="text-[48px] leading-14" delay={0}>
                 Hey, I'm <ImageToolTip text="Michael" imageUrl="home_ex/bridge.JPG" imageAlt="me" />, a student<Superscript text="1" size="text-2xl" />, engineer<Superscript text="2" size="text-2xl" />, and design enthusiast<Superscript text="3" size="text-2xl" /> from MD.
 
 
@@ -104,16 +104,16 @@ function Profile() {
             <br />
 
             <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1, transition: { duration: 1, delay: 1.5 } }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .5, delay: 1.3 } }}
                 viewport={{ once: true }}>
                 <span className='text-2xl text-gray-900'>
                     I'm studying Computer Science <Superscript text="(w/ Design + Math)" size="text-xl" /> at UPenn, exploring human-computer interaction and design systems. My work focuses on building community-driven applications that people enjoy using.
                 </span>
             </motion.div>
             <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1, transition: { duration: 1, delay: 2 } }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .5, delay: 1.9 } }}
                 viewport={{ once: true }}>
                 <span className='text-2xl text-gray-900'>
                     My ideal day involves generous amounts of <ImageToolTip text="falling off walls" imageUrl="assets/climbing.gif" imageAlt="climbing" />, <ImageToolTip text="exploring earth" imageUrl="assets/travel.jpg" imageAlt="traveling" />, <ImageToolTip text="watching movies" imageUrl="assets/movie.jpg" imageAlt="films" />, and <ImageToolTip text="learning a lot" imageUrl="assets/learn.jpg" imageAlt="learning" />!
@@ -121,10 +121,10 @@ function Profile() {
             </motion.div>
 
             <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1, transition: { duration: 1, delay: 2.5 } }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .5, delay: 2.5 } }}
                 viewport={{ once: true }}>
-                <div className="flex h-[200px] gap-4 mt-10 mb-20 overflow-x-scroll">
+                <div className="flex h-[200px] gap-4 mt-8 mb-20 overflow-x-scroll">
                     <img src="home_ex/china.jpg" alt="me" className="rounded-md" />
                     <img src="home_ex/nice.JPG" alt="me" className="rounded-md" />
                     <img src="home_ex/meme.jpg" alt="me" className="rounded-md" />
