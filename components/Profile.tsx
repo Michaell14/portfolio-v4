@@ -9,7 +9,7 @@ function Superscript({ text, size }: { text: string, size: string }) {
     )
 }
 
-const TypewriterEffect = ({ children, className, delay = 0 }: { children: React.ReactNode, className: string, delay: number }) => {
+const TypewriterEffect = ({ children, className }: { children: React.ReactNode, className: string }) => {
     // We use React.useMemo to process the children only when they change.
     const elementsToAnimate = useMemo(() => {
         const elements: React.ReactNode[] = [];
@@ -95,10 +95,10 @@ const TypewriterEffect = ({ children, className, delay = 0 }: { children: React.
 function Profile() {
     return (
         <div className='gap-2 flex flex-col mt-16 primary-font'>
-            <TypewriterEffect className="text-[32px] leading-10 lg:text-[48px] lg:leading-14 hidden lg:block" delay={0}>
+            <TypewriterEffect className="text-[32px] leading-10 lg:text-[48px] lg:leading-14 hidden lg:block">
                 Hey, I'm <ImageToolTip text="Michael" imageUrl="home_ex/bridge.JPG" imageAlt="me" color="black" />, a student<Superscript text="1" size="text-2xl" />, engineer<Superscript text="2" size="text-2xl" />, and design enthusiast<Superscript text="3" size="text-2xl" /> from MD.
             </TypewriterEffect>
-            <TypewriterEffect className="text-[32px] leading-10 lg:text-[48px] lg:leading-14 block lg:hidden" delay={0}>
+            <TypewriterEffect className="text-[32px] leading-10 lg:text-[48px] lg:leading-14 block lg:hidden">
                 Hey, I'm <ImageToolTip text="Michael" imageUrl="home_ex/bridge.JPG" imageAlt="me" color="black" />, a student, engineer, and design enthusiast from MD.
             </TypewriterEffect>
             <br />
