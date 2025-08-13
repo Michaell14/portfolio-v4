@@ -106,7 +106,7 @@ function Profile() {
 
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .5, delay: 1.3 } }}
+                whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .4, delay: 1.3 } }}
                 viewport={{ once: true }}>
                 <span className='text-xl lg:text-2xl text-gray-700'>
                     I'm studying Computer Science <Superscript text="(w/ Design + Math)" size="text-xl" /> at UPenn, exploring human-computer interaction and design systems. My work focuses on building community-driven applications that people enjoy using.
@@ -114,7 +114,7 @@ function Profile() {
             </motion.div>
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .5, delay: 1.9 } }}
+                whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .4, delay: 1.7 } }}
                 viewport={{ once: true }}>
                 <span className='text-xl lg:text-2xl text-gray-700'>
                     My ideal day involves generous amounts of <ImageToolTip text="falling off walls" imageUrl="assets/climbing.gif" imageAlt="climbing" color="#374151" />, <ImageToolTip text="exploring earth" imageUrl="assets/travel.jpg" imageAlt="traveling" color="#374151" />, <ImageToolTip text="watching movies" imageUrl="assets/movie.jpg" imageAlt="films" color="#374151" />, and <ImageToolTip text="learning a lot" imageUrl="assets/learn.jpg" imageAlt="learning" color="#374151" />!
@@ -123,7 +123,7 @@ function Profile() {
 
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .5, delay: 2.5 } }}
+                whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .4, delay: 2.1 } }}
                 viewport={{ once: true }}>
                 <div className="flex h-[150px] lg:h-[200px] gap-4 mt-8 mb-20 overflow-x-scroll">
                     <img src="home_ex/china.jpg" alt="me" className="rounded-md" />
