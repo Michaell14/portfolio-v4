@@ -4,12 +4,13 @@ import Experience from '../components/Experience';
 import Community from '../components/Community';
 import Header from '../components/Header';
 import Profile from '../components/Profile';
+import { Analytics } from "@vercel/analytics/react"
 import './App.css'
 
 function App() {
     return (
         <>
-
+            <Analytics />
             <div className='relative overflow-hidden px-6 md:px-10 lg:px-0'>
                 <div className='max-w-4xl mx-auto mt-10 '>
                     <Header />
