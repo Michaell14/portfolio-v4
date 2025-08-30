@@ -123,7 +123,7 @@ function Profile() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .4, delay: 2.1 } }}
                 viewport={{ once: true }}>
-                <div className="flex h-[150px] lg:h-[200px] gap-4 mt-8 mb-20 overflow-x-scroll">
+                <div className="flex h-[150px] lg:h-[200px] gap-4 mt-8 mb-20 overflow-x-scroll md:overflow-x-hidden">
                     <img src="home_ex/china.jpg" alt="me" className="rounded-md" />
                     <img src="home_ex/nice.webp" alt="me" className="rounded-md" />
                     <img src="home_ex/meme.jpg" alt="me" className="rounded-md" />
