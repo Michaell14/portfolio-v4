@@ -2,77 +2,77 @@ import { useState } from 'react';
 
 const phones = [
     {
-        src: "2g.png",
+        src: "2g.webp",
         name: "2G",
         description: "an image of an iphone 2G. It was released in 2005."  
     },
     {
-        src: "3g.png",
+        src: "3g.webp",
         name: "3G",
         description: "an image of an iphone 3G. It was released in 2008."
     },
     {
-        src: "3gs.png",
+        src: "3gs.webp",
         name: "3GS",
         description: "an image of an iphone 3GS. It was released in 2009."
     },
     {
-        src: "5.png",
+        src: "5.webp",
         name: "5",
         description: "an image of an iphone 5. It was released in 2010."
     },
     {
-        src: "6.png",
+        src: "6.webp",
         name: "6",
         description: "an image of an iphone 6. It was released in 2011."
     },
     {
-        src: "7.png",
+        src: "7.webp",
         name: "7",
         description: "an image of an iphone 7. It was released in 2012."
     },
     {
-        src: "8.png",
+        src: "8.webp",
         name: "8",
         description: "an image of an iphone 8. It was released in 2013."
     },
     {
-        src: "x.png",
+        src: "x.webp",
         name: "X",
         description: "an image of an iphone X. It was released in 2017."
     },
     {
-        src: "xr.png",
+        src: "xr.webp",
         name: "XR",
         description: "an image of an iphone X. It was released in 2017."
     },
     {
-        src: "11.png",
+        src: "11.webp",
         name: "11",
         description: "an image of an iphone 11. It was released in 2018."
     },
     {
-        src: "13.png",
+        src: "13.webp",
         name: "13",
         description: "an image of an iphone 13. It was released in 2019."
     },
     {
-        src: "14.png",
+        src: "14.webp",
         name: "14",
         description: "an image of an iphone 14. It was released in 2020."
     },
     {
-        src: "15.png",
+        src: "15.webp",
         name: "15",
         description: "an image of an iphone 15. It was released in 2021."
     },  
     {
-        src: "16.png",
+        src: "16.webp",
         name: "16",
         description: "an image of an iphone 16. It was released in 2022."
     },
     {
-        src: "17.png",
+        src: "17.webp",
         name: "17",
         description: "an image of an iphone 17. It was released in 2023."
     },
@@ -101,7 +101,7 @@ function IphoneCafe() {
                 {/* BLUE HEADER*/}
                 <div className="bg-[#01007F] flex justify-between px-1">
                     <div className="flex gap-2 items-center">
-                        <img src="/iphonecafe/pixel.png" alt="logo" className="w-[14px] h-[14px]" />
+                        <img src="/iphonecafe/pixel.webp" alt="logo" className="w-[14px] h-[14px]" />
                         <p className="text-white font-silkscreen text-xs">Facebook.exe</p>
                     </div>
                     <div className="flex gap-2 items-center font-silkscreen text-xs">
@@ -126,7 +126,7 @@ function IphoneCafe() {
 
                 <div className="flex gap-10 my-3">
                     <img
-                        src={spinningPhones.size > 0 ? "/iphonecafe/angryjobs.jpg" : "/iphonecafe/stevey.webp"}
+                        src={spinningPhones.size > 0 ? "/iphonecafe/angryjobs.webp" : "/iphonecafe/stevey.webp"}
                         alt="windows"
                         className="w-[90px] h-[90px] rounded-full object-cover"
                     />
