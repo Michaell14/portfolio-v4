@@ -1,4 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
 @import "tailwindcss";
 
-/* Global light grainy background with subtle blobs */
+/* For Chrome, Edge, Safari */
+.old-windows-scrollbar::-webkit-scrollbar {
+    width: 16px;
+    /* Width of vertical scrollbar */
+    height: 16px;
+    /* Height of horizontal scrollbar */
+}
 
+.old-windows-scrollbar::-webkit-scrollbar-track {
+    background: #c0c0c0;
+    /* Classic gray background */
+    border: 1px solid #808080;
+}
+
+.old-windows-scrollbar::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+    border: 2px outset #dfdfdf;
+    /* 3D raised effect */
+    box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;
+}
+
+.old-windows-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #d0d0d0;
+}
+
+.old-windows-scrollbar::-webkit-scrollbar-thumb:active {
+    border-style: inset;
+    /* Pressed effect */
+    box-shadow: inset -1px -1px 0 #fff, inset 1px 1px 0 #808080;
+}
+
+.old-windows-scrollbar::-webkit-scrollbar-button {
+    background: #c0c0c0;
+    border: 2px outset #dfdfdf;
+    height: 16px;
+    width: 16px;
+}
+
+.old-windows-scrollbar::-webkit-scrollbar-button:hover {
+    background: #d0d0d0;
+}
+
+/* Firefox (simpler styling) */
+.old-windows-scrollbar {
+    scrollbar-width: auto;
+    scrollbar-color: #c0c0c0 #dfdfdf;
+}
+
+.font-silkscreen {
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
