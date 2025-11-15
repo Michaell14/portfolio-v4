@@ -31,19 +31,19 @@ const community = [
     {
         title: "Penn SPARK",
         role: "Product Manager + Tech Lead",
-        description: <p className="text-sm text-gray-700">Building creative social applications for UPenn Students.</p>,
+        description: <p className="text-sm text-gray-700">Building creative community-driven applications for UPenn Students.</p>,
         date: "01/2024 - Present"
     },
     {
         title: "PClassic",
         role: "Organizer",
-        description: <p className="text-sm text-gray-700">Organized Philadelphia's largest high school competitive programming competition by designing programming problems and maintaining the pclassic.org website.</p>,
+        description: <p className="text-sm text-gray-700">Organized Philadelphia's largest high school competitive programming competition; maintained pclassic.org website.</p>,
         date: "02/2024 - 10/2024"
     },
     {
         title: "CodeDay DC",
         role: "Director",
-        description: <p className="text-sm text-gray-700">Directed logistics for CodeDay DC, a hackathon for high school students in the DC area.</p>,
+        description: <p className="text-sm text-gray-700">Directed a 36-hour in-person hackathon for high school students in the DC area.</p>,
         date: "09/2021 - 05/2023"
     },
 ]

@@ -94,20 +94,32 @@ const TypewriterEffect = ({ children, className }: { children: React.ReactNode, 
 
 function Profile() {
     return (
-        <div className='gap-2 flex flex-col mt-16 primary-font'>
-            <TypewriterEffect className="text-[32px] leading-10 lg:text-[48px] lg:leading-14 hidden lg:block">
+            <div className='gap-2 flex flex-col mt-20 primary-font'>
+                {/* <TypewriterEffect className="text-[32px] leading-10 lg:text-[48px] lg:leading-14 hidden lg:block">
+                    I'm <ImageToolTip text="Michael" imageUrl="home_ex/bridge.JPG" imageAlt="me" color="black" /> — and I like to build things with tools that I don't know.
+                </TypewriterEffect> */}
+                
+                
+                        
+                <TypewriterEffect className="text-[32px] leading-10 lg:text-[48px] lg:leading-14 hidden lg:block">
                 Hey, I'm <ImageToolTip text="Michael" imageUrl="home_ex/bridge.JPG" imageAlt="me" color="black" />, a student<Superscript text="1" size="text-2xl" />, engineer<Superscript text="2" size="text-2xl" />, and design enthusiast<Superscript text="3" size="text-2xl" /> from MD.
             </TypewriterEffect>
-            <TypewriterEffect className="text-[32px] leading-10 lg:text-[48px] lg:leading-14 block lg:hidden">
-                Hey, I'm <ImageToolTip text="Michael" imageUrl="home_ex/bridge.JPG" imageAlt="me" color="black" />, a student, engineer, and design enthusiast from MD.
-            </TypewriterEffect>
+                        {/* <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .4, delay: .4 } }}
+                            viewport={{ once: true }}>
+                            <span className='text-lg lg:text-xl text-gray-700'>
+                            I'm studying CS <Superscript text="(w/ Design + Math)" size="text-sm" /> at UPenn, exploring design systems and building applications that people enjoy using.
+                            </span>
 
-            <motion.div
+                        </motion.div> */}
+                        
+                        <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .4, delay: 1.3 } }}
                 viewport={{ once: true }}>
                 <span className='text-xl lg:text-2xl text-gray-700'>
-                    I'm studying Computer Science <Superscript text="(w/ Design + Math)" size="text-xl" /> at UPenn, exploring human-computer interaction and design systems. My work focuses on building community-driven applications that people enjoy using.
+                    I'm studying CS <Superscript text="(w/ Design + Math)" size="text-xl" /> at UPenn, exploring atomic design patterns and building intuitive, user-centric applications.
                 </span>
             </motion.div>
             <motion.div
@@ -115,7 +127,7 @@ function Profile() {
                 whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .4, delay: 1.7 } }}
                 viewport={{ once: true }}>
                 <span className='text-xl lg:text-2xl text-gray-700'>
-                    My ideal day involves generous amounts of <ImageToolTip text="falling off walls" imageUrl="assets/climbing.gif" imageAlt="climbing" color="#374151" />, <ImageToolTip text="exploring earth" imageUrl="assets/travel.webp" imageAlt="traveling" color="#374151" />, <ImageToolTip text="watching movies" imageUrl="assets/movie.jpg" imageAlt="films" color="#374151" />, and <ImageToolTip text="learning a lot" imageUrl="assets/learn.jpg" imageAlt="learning" color="#374151" />!
+                    You can find me <ImageToolTip text="falling off walls" imageUrl="assets/climbing.gif" imageAlt="climbing" color="#374151" />, <ImageToolTip text="exploring earth" imageUrl="assets/travel.webp" imageAlt="traveling" color="#374151" />, <ImageToolTip text="watching movies" imageUrl="assets/movie.jpg" imageAlt="films" color="#374151" />, and <ImageToolTip text="learning a lot" imageUrl="assets/learn.jpg" imageAlt="learning" color="#374151" />!
                 </span>
             </motion.div>
 
@@ -129,8 +141,20 @@ function Profile() {
                     <img src="home_ex/meme.jpg" alt="me" className="rounded-md" />
                 </div>
             </motion.div>
+                    
 
-        </div>
+                
+
+                {/* <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .4, delay: 1.2 } }}
+                    viewport={{ once: true }}>
+                    <span className='text-lg lg:text-xl text-gray-700'>
+                        Prev. at Kensho Technologies, Wealth.com, and Verizon.
+                    </span>
+                </motion.div> */}
+
+            </div>
     )
 }
 

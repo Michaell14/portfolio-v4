@@ -7,7 +7,7 @@ function Header() {
             <div className="text-sm gap-2 flex flex-col mb-5 w-fit">     
                 <div className="italic text-xs text-gray-500">
                     <p className="hover:text-gray-700">MICHAEL LI</p>
-                    <p className="hover:text-gray-700"><a href="https://www.instagram.com/michaells19/" target="_blank" rel="noopener noreferrer">@limich19</a></p>
+                    <p className="hover:text-gray-700"><a href="https://www.instagram.com/michaells19/" target="_blank" rel="noopener noreferrer">@michaells19</a></p>
                     
                 </div>
             </div>
