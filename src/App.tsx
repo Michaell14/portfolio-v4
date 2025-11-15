@@ -4,7 +4,7 @@ import Experience from '../components/Experience';
 import Community from '../components/Community';
 import Header from '../components/Header';
 import Profile from '../components/Profile';
-import Sandbox from '../components/Sandbox';
+// import Sandbox from '../components/Sandbox';
 import { Analytics } from "@vercel/analytics/react"
 import './App.css'
 

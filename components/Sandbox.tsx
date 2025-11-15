@@ -1,6 +1,5 @@
 // import useStore from '../store';
 import { motion } from 'motion/react';
-import { FaGithubAlt, FaLink } from "react-icons/fa";
 
 function Sandbox() {
     // const { openedProjects, toggleOpenedProject } = useStore();

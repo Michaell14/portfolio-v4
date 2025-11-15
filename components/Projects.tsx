@@ -1,6 +1,4 @@
 // import useStore from '../store';
-import { motion } from 'motion/react';
-import { FaGithubAlt, FaLink } from "react-icons/fa";
 
 function Projects() {
     // const { openedProjects, toggleOpenedProject } = useStore();
