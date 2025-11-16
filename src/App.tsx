@@ -13,7 +13,7 @@ function App() {
         <>
             <Analytics />
             <div className='relative overflow-hidden px-6 md:px-10 lg:px-0'>
-                <div className='max-w-[968px] mx-auto mt-10 '>
+                <div className='max-w-6xl mx-auto mt-10 '>
                     <Header />
                     <Profile />
                     <hr className='horizontal-line mt-32 mb-5' />

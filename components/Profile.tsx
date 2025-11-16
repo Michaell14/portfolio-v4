@@ -134,7 +134,7 @@ function Profile() {
                 </span>
             </motion.div>
 
-            <motion.div
+            {/* <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .4, delay: 2.1 } }}
                 viewport={{ once: true }}>
@@ -143,7 +143,7 @@ function Profile() {
                     <img src="home_ex/nice.webp" alt="me" className="rounded-md" />
                     <img src="home_ex/meme.jpg" alt="me" className="rounded-md" />
                 </div>
-            </motion.div>
+            </motion.div> */}
                     
 
                 
