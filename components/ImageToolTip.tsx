@@ -23,7 +23,7 @@ const ImageToolTip = ({ text, imageUrl, imageAlt, color }: { text: string, image
             {isHovered && (type === "bridge" || type === "climbing" || type === "music" || type === "travel") && (
                 <div
                     className="absolute z-10 p-2 bg-white border border-gray-300 rounded shadow-lg"
-                    style={{ top: 'calc(100% + 10px)', left: '50%', transform: 'translateX(-50%)' }} // Position below and center
+                    style={{ top: 'calc(100% + 10px)', left: '50%', transform: 'translateX(-30%)' }} // Position below and center
                 >
                     <img src={imageUrl} alt={imageAlt} className="max-w-lg h-auto rounded max-h-[380px]" />
                 </div>

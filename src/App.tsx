@@ -13,10 +13,10 @@ function App() {
         <>
             <Analytics />
             <div className='relative overflow-hidden px-6 md:px-10 lg:px-0'>
-                <div className='max-w-6xl mx-auto mt-10 '>
+                <div className='max-w-7xl mx-auto px-0 sm:px-8 mt-10 '>
                     <Header />
                     <Profile />
-                    <hr className='horizontal-line mt-32 mb-5' />
+                    <hr className='horizontal-line mt-42 mb-5' />
                     <Projects />
                     {/* <hr className='horizontal-line mt-20 mb-5' /> */}
                     {/* <Sandbox /> */}

@@ -94,19 +94,20 @@ const TypewriterEffect = ({ children, className }: { children: React.ReactNode, 
 
 function Profile() {
     return (
-            <div className='gap-2 flex flex-col mt-20 primary-font'>
+            <div className='gap-2 flex flex-col mt-32 primary-font'>
                 {/* <TypewriterEffect className="text-[32px] leading-10 lg:text-[48px] lg:leading-14 hidden lg:block">
                     I'm <ImageToolTip text="Michael" imageUrl="home_ex/bridge.JPG" imageAlt="me" color="black" /> — and I like to build things with tools that I don't know.
                 </TypewriterEffect> */}
                 
                 
                         
-                <TypewriterEffect className="text-[32px] leading-10 lg:text-[48px] lg:leading-14 hidden lg:block">
+                {/* <TypewriterEffect className="text-lg leading-10 lg:text-xl lg:leading-14 hidden lg:block">
                 Hey, I'm <ImageToolTip text="Michael" imageUrl="home_ex/bridge.JPG" imageAlt="me" color="black" />, a student<Superscript text="1" size="text-2xl" />, engineer<Superscript text="2" size="text-2xl" />, and design enthusiast<Superscript text="3" size="text-2xl" /> from MD.
-            </TypewriterEffect>
-            <TypewriterEffect className="text-[32px] leading-10 lg:text-[48px] lg:leading-14 block lg:hidden">
-                Hey, I'm <ImageToolTip text="Michael" imageUrl="home_ex/bridge.JPG" imageAlt="me" color="black" />, a student, engineer, and design enthusiast from MD.
-            </TypewriterEffect>
+            </TypewriterEffect> */}
+            <div className="max-w-full md:max-w-2/3">
+                <TypewriterEffect className="text-4xl text-gray-900">
+                    Hey, I'm <ImageToolTip text="Michael" imageUrl="home_ex/bridge.JPG" imageAlt="me" color="#0F172A" />
+                </TypewriterEffect>
                         {/* <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .4, delay: .4 } }}
@@ -116,23 +117,34 @@ function Profile() {
                             </span>
 
                         </motion.div> */}
-                        
-                        <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .4, delay: 1.3 } }}
-                viewport={{ once: true }}>
-                <span className='text-xl lg:text-2xl text-gray-700'>
-                    I'm studying CS <Superscript text="(w/ Design + Math)" size="text-xl" /> at UPenn, exploring atomic design patterns and building intuitive, user-centric applications.
-                </span>
-            </motion.div>
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .4, delay: 1.7 } }}
-                viewport={{ once: true }}>
-                <span className='text-xl lg:text-2xl text-gray-700'>
-                    You can find me <ImageToolTip text="falling off walls" imageUrl="assets/climbing.gif" imageAlt="climbing" color="#374151" />, <ImageToolTip text="exploring earth" imageUrl="assets/travel.webp" imageAlt="traveling" color="#374151" />, <ImageToolTip text="watching movies" imageUrl="assets/movie.jpg" imageAlt="films" color="#374151" />, and <ImageToolTip text="learning a lot" imageUrl="assets/learn.jpg" imageAlt="learning" color="#374151" />!
-                </span>
-            </motion.div>
+                <div className="mt-2">
+                    
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .4, delay: .5 } }}
+                    viewport={{ once: true }}>
+                    <span className='text-lg text-gray-700'>
+                        I'm studying CS <Superscript text="(w/ Design + Math)" size="text-sm" /> at UPenn 
+                    </span>
+                </motion.div>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .4, delay: .9 } }}
+                    viewport={{ once: true }}>
+                    <span className='text-lg text-gray-700'>
+                        You can find me <ImageToolTip text="falling off walls" imageUrl="assets/climbing.gif" imageAlt="climbing" color="#374151" />, <ImageToolTip text="exploring earth" imageUrl="assets/travel.webp" imageAlt="traveling" color="#374151" />, <ImageToolTip text="watching movies" imageUrl="assets/movie.jpg" imageAlt="films" color="#374151" />, and <ImageToolTip text="learning a lot" imageUrl="assets/learn.jpg" imageAlt="learning" color="#374151" />!
+                    </span>
+                </motion.div>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .4, delay: 1.3 } }}
+                    viewport={{ once: true }}>
+                    <span className='text-lg text-gray-700'>
+                        Prev. at Kensho Technologies, Wealth.com, and Verizon
+                    </span>
+                </motion.div>
+                </div>  
+            </div>
 
             {/* <motion.div
                 initial={{ opacity: 0, y: 20 }}
