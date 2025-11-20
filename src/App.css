@@ -4,8 +4,8 @@
 @import "tailwindcss";
 
 :root{
-  /* background-color: #fafaf9; */
-  background-color: white;
+  background-color: #fafaf9;
+  /* background-color: #f5f5f5; */
 }
 
 .vertical-line {
