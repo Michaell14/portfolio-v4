@@ -8,18 +8,19 @@ function Projects() {
             <p className='text-xs text-gray-500 italic!'>PROJECTS</p>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-12'>
                 {projects.map((project) => (
-                    <a href={project.link ?? project.github ?? ""} target="_blank" rel="noopener noreferrer">
-                    <div key={project.name} className={`flex flex-col hover:cursor-pointer h-fit mb-6`}>
-                        <img src={project.image} alt={project.name} className="object-cover w-full h-auto aspect-video" />
-                        
-                        <div className = "mt-2">
-                            <div className="flex flex-row justify-between items-center">
-                                <p className='text-md lg:text-md text-gray-700'>{project.name}</p>
-                                <p className='text-gray-500'>{project.subdescription}</p>
+
+                    <a key={project.name} href={project.link ?? project.github ?? ""} target="_blank" rel="noopener noreferrer">
+                        <div  className={`flex flex-col hover:cursor-pointer h-fit mb-6`}>
+                            <img src={project.image} alt={project.name} className="object-cover w-full h-auto aspect-video" />
+                            
+                            <div className = "mt-2">
+                                <div className="flex flex-row justify-between items-center">
+                                    <p className='text-md lg:text-lg text-gray-700'>{project.name}</p>
+                                    <p className='text-gray-500'>{project.subdescription}</p>
+                                </div>
+                                {/* <p className='text-sm text-gray-700'>{project.description}</p> */}
                             </div>
-                            {/* <p className='text-sm text-gray-700'>{project.description}</p> */}
                         </div>
-                    </div>
                     </a>
                 ))}
             </div>
