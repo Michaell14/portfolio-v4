@@ -17,7 +17,7 @@ function Projects() {
                             </div>
                             
                             <div className = "mt-2">
-                                <div className="flex flex-row justify-between items-center">
+                                <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-1">
                                     <p className='text-base lg:text-lg text-gray-700'>{project.name}</p>
                                     <p className='text-gray-500 text-sm lg:text-base'>{project.context} · ({project.subdescription})</p>
                                 </div>

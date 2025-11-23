@@ -8,7 +8,7 @@ function Experience() {
             <p className='italic text-xs text-gray-500 mb-5'>EXPERIENCE</p>
             <div className='gap-2 flex flex-col my-14'>
 
-                {experience.map((item, index) => (
+                {experience.map((item) => (
                     <motion.div
                         key={item.title}
                         initial={{ opacity: .45 }}
