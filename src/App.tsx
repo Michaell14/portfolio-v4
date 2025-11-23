@@ -19,8 +19,6 @@ function App() {
                     <hr className='horizontal-line mt-42 mb-5' />
                     <Projects />
                     <hr className='horizontal-line mt-20 mb-5' />
-                    {/* <Sandbox /> */}
-                    {/* <hr className='horizontal-line mt-48 mb-5' /> */}
 
                     <Experience />
                     <hr className='horizontal-line mt-32 mb-5' />
