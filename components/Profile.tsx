@@ -9,6 +9,32 @@ function Superscript({ text, size }: { text: string, size: string }) {
     )
 }
 
+// Define animation variants outside the component to prevent recreation on every render
+const containerVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.06,
+        },
+    },
+};
+
+const elementVariants = {
+    hidden: {
+        opacity: 0,
+        y: 20,
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            type: "spring" as const,
+            damping: 12,
+            stiffness: 100,
+        },
+    },
+};
+
 const TypewriterEffect = ({ children, className }: { children: React.ReactNode, className: string }) => {
     // We use React.useMemo to process the children only when they change.
     const elementsToAnimate = useMemo(() => {
@@ -36,34 +62,6 @@ const TypewriterEffect = ({ children, className }: { children: React.ReactNode, 
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
 
-    // Variants for the container element.
-    // This will handle the staggered animation of the children.
-    const containerVariants = {
-        hidden: {},
-        visible: {
-            transition: {
-                staggerChildren: 0.06, // Time delay between each element's animation
-            },
-        },
-    };
-
-    // Variants for each individual element (word or component).
-    const elementVariants = {
-        hidden: {
-            opacity: 0,
-            y: 20,
-        },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                type: "spring" as const,
-                damping: 12,
-                stiffness: 100,
-            },
-        },
-    };
-
     return (
         // The main container for the animated text.
         <motion.div
@@ -90,7 +88,21 @@ const TypewriterEffect = ({ children, className }: { children: React.ReactNode, 
     );
 };
 
-
+// Reusable animation variants for text reveal
+const textRevealVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (delay: number) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+            type: "spring" as const,
+            damping: 12,
+            stiffness: 100,
+            duration: 0.4,
+            delay,
+        },
+    }),
+};
 
 function Profile() {
     return (
@@ -120,24 +132,30 @@ function Profile() {
                 <div className="mt-2">
                     
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .4, delay: .5 } }}
+                    custom={0.5}
+                    initial="hidden"
+                    whileInView="visible"
+                    variants={textRevealVariants}
                     viewport={{ once: true }}>
                     <span className='text-lg text-gray-700'>
                         I'm studying CS <Superscript text="(w/ Design + Math)" size="text-sm" /> at UPenn 
                     </span>
                 </motion.div>
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .4, delay: .9 } }}
+                    custom={0.9}
+                    initial="hidden"
+                    whileInView="visible"
+                    variants={textRevealVariants}
                     viewport={{ once: true }}>
                     <span className='text-lg text-gray-700'>
                         You can find me <ImageToolTip text="falling off walls" imageUrl="assets/climbing.gif" imageAlt="climbing" color="#374151" />, <ImageToolTip text="exploring earth" imageUrl="assets/travel.webp" imageAlt="traveling" color="#374151" />, <ImageToolTip text="watching movies" imageUrl="assets/movie.jpg" imageAlt="films" color="#374151" />, and <ImageToolTip text="learning a lot" imageUrl="assets/learn.jpg" imageAlt="learning" color="#374151" />!
                     </span>
                 </motion.div>
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .4, delay: 1.3 } }}
+                    custom={1.3}
+                    initial="hidden"
+                    whileInView="visible"
+                    variants={textRevealVariants}
                     viewport={{ once: true }}>
                     <span className='text-lg text-gray-700'>
                         Prev. at Kensho Technologies, Wealth.com, and Verizon

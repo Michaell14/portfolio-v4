@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
-const phones = [
+const PHONES = [
     {
         src: "2g.webp",
         name: "2G",
@@ -81,7 +81,7 @@ const phones = [
 function IphoneCafe() {
     const [spinningPhones, setSpinningPhones] = useState<Set<number>>(new Set());
 
-    const handlePhoneClick = (index: number) => {
+    const handlePhoneClick = useCallback((index: number) => {
         setSpinningPhones(prev => new Set(prev).add(index));
         // Remove the spinning class after animation completes
         setTimeout(() => {
@@ -91,7 +91,7 @@ function IphoneCafe() {
                 return newSet;
             });
         }, 1000); // Animation duration
-    };
+    }, []);
 
 
     return (
@@ -167,7 +167,7 @@ function IphoneCafe() {
                 <hr className="border-none h-1 bg-white w-full" />
 
                 <div className="grid grid-cols-3 bg-gray-100 gap-1 h-[280px] overflow-y-scroll overflow-x-hidden old-windows-scrollbar mt-2 border-2 [border-style:ridge] border-[#808080]">
-                    {phones.map((phone, index) => (
+                    {PHONES.map((phone, index) => (
                         <div
                             key={index}
                             className={`h-[100px] w-[100px] hover:cursor-pointer bg-white hover:scale-110 transition-all duration-200 select-none ${spinningPhones.has(index) ? 'animate-spin' : ''}`}

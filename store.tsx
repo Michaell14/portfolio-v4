@@ -39,14 +39,7 @@ const useStore = create<Store>((set, get) => ({
         "movie": false,
         "learn": false
     }}),
-    isAnyLocked: () => {
-        for (const key in get().locked) {
-            if (get().locked[key]) {
-                return true;
-            }
-        }
-        return false;
-    }
+    isAnyLocked: () => Object.values(get().locked).some(value => value)
 }));
 
 export default useStore;

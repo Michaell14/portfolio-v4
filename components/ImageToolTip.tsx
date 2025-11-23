@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
 
 const ImageToolTip = ({ text, imageUrl, imageAlt, color }: { text: string, imageUrl: string, imageAlt: string, color: string }) => {
     const [isHovered, setIsHovered] = useState(false);
-    const type = imageUrl.split('/').pop()?.split('.').shift();
+    const type = useMemo(() => imageUrl.split('/').pop()?.split('.').shift(), [imageUrl]);
 
     return (
         <div className="relative inline-block"> {/* Essential for positioning the tooltip */}

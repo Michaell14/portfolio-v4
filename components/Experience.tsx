@@ -10,12 +10,12 @@ function Experience() {
 
                 {experience.map((item, index) => (
                     <motion.div
-                        key={index}
+                        key={item.title}
                         initial={{ opacity: .45 }}
                         whileInView={{ opacity: 1, transition: { duration: .3 } }}
                         viewport={{ amount: .8 }}
                     >
-                        <ExperienceItem key={item.title} title={item.title} role={item.role} description={item.description} date={item.date} />
+                        <ExperienceItem title={item.title} role={item.role} description={item.description} date={item.date} />
                     </motion.div>
                 ))}
             </div>

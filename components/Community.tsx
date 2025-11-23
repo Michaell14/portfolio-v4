@@ -6,14 +6,14 @@ function Community() {
         <div className="secondary-font">
             <p className='italic text-xs text-gray-500 mb-5'>COMMUNITY</p>
             <div className='gap-2 flex flex-col my-14'>
-                {community.map((item, index) => (
+                {community.map((item) => (
                     <motion.div
-                        key={index}
+                        key={item.title}
                         initial={{ opacity: .45 }}
                         whileInView={{ opacity: 1, transition: { duration: .3 } }}
                         viewport={{ amount: .8 }}
                     >
-                        <ExperienceItem key={item.title} title={item.title} role={item.role} description={item.description} date={item.date} />
+                        <ExperienceItem title={item.title} role={item.role} description={item.description} date={item.date} />
                     </motion.div>
                 ))}
             </div>

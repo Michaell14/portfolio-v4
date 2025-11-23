@@ -1,5 +1,4 @@
 // import useStore from '../store';
-import { motion } from 'motion/react';
 
 function Sandbox() {
     // const { openedProjects, toggleOpenedProject } = useStore();
@@ -10,13 +9,6 @@ function Sandbox() {
             <div className='grid grid-cols-2 md:grid-cols-3 gap-6 mt-12'>
                 {projects.map((project) => (
                     <div key={project.name} className={`flex flex-col hover:cursor-pointer border border-gray-200 h-fit mb-6`}>
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1, transition: { duration: .6 } }}
-                            viewport={{ amount: .95 }}
-                        >
-                            
-                        </motion.div>
                         <img src={project.image} alt={project.name} className="object-cover w-full h-[320px]" />
                         
                         <div className = "p-2">

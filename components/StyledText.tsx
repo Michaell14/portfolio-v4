@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import useStore from '../store';
 
 type ColorType = 'me' | 'climb' | 'music' | 'travel' | 'movie' | 'learn';
@@ -11,36 +12,36 @@ const colors: Record<ColorType, string> = {
     'learn': "bg-[#aa46be]"
 }
 
+const IMAGE_MAP: Record<string, string | null> = {
+    'me': '/assets/me.jpg',
+    'climb': '/assets/climbing.gif',
+    'music': '/assets/music.jpg',
+    'travel': '/assets/travel.jpg',
+    'movie': null,
+    'learn': null
+}
+
 function StyledText(props: { text: string, type: string }) {
     const type = props.type;
     const { setImageSrc, setType, locked, setLocked, clearAllLocked, isAnyLocked } = useStore();
 
-    const setImage = () => {
-        if (type === "me") {
-            setImageSrc(`/assets/me.jpg`);
-        } else if (type === "climb") {  
-            setImageSrc(`/assets/climbing.gif`);
-        } else if (type === "music") {
-            setImageSrc(`/assets/music.jpg`);
-        } else if (type === "travel") {
-            setImageSrc(`/assets/travel.jpg`);
-        } else if (type === "movie" || type === "learn") {
-            setImageSrc(null);
-        }
-    }
-    const handleMouseEnter = () => {
+    const setImage = useCallback(() => {
+        setImageSrc(IMAGE_MAP[type] ?? null);
+    }, [type, setImageSrc]);
+
+    const handleMouseEnter = useCallback(() => {
         if (isAnyLocked()) return;
         setImage();
         setType(type);
-    };
+    }, [isAnyLocked, setImage, setType, type]);
 
-    const handleMouseLeave = () => {
+    const handleMouseLeave = useCallback(() => {
         if (isAnyLocked()) return;
         setImageSrc(null);
         setType(null);
-    };
+    }, [isAnyLocked, setImageSrc, setType]);
 
-    const handleClick = () => {
+    const handleClick = useCallback(() => {
         if (locked[type]) {
             setLocked({ [type]: false });
             setType(null);
@@ -50,7 +51,7 @@ function StyledText(props: { text: string, type: string }) {
             setImage();
             setLocked({ [type]: true });
         }
-    };
+    }, [locked, type, setLocked, setType, clearAllLocked, setImage]);
 
     return (
         <span 
