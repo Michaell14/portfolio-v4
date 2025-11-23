@@ -1,7 +1,14 @@
 // import useStore from '../store';
+import { motion } from 'motion/react';
+import { useState } from 'react';
 
 function Projects() {
     // const { openedProjects, toggleOpenedProject } = useStore();
+    const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
+
+    const handleImageLoad = (imageSrc: string) => {
+        setLoadedImages(prev => new Set(prev).add(imageSrc));
+    };
 
     return (
         <div className='text-sm flex flex-col secondary-font relative'>
@@ -10,9 +17,21 @@ function Projects() {
                 {projects.map((project) => (
 
                     <a key={project.name} href={project.link ?? project.github ?? ""} target="_blank" rel="noopener noreferrer">
-                        <div  className={`flex flex-col hover:cursor-pointer break-inside-avoid mb-6`}>
+                        <motion.div
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={loadedImages.has(project.image) ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
+                            transition={{ duration: 0.5, ease: "easeOut" }}
+                            className={`flex flex-col hover:cursor-pointer break-inside-avoid mb-6`}
+                        >
                             <div className="relative overflow-hidden group">
-                                <img src={project.image} alt={project.name} className="object-cover w-full h-auto" />
+                                <img 
+                                    src={project.image} 
+                                    alt={project.name} 
+                                    className="object-cover w-full h-auto"
+                                    loading="eager"
+                                    decoding="async"
+                                    onLoad={() => handleImageLoad(project.image)}
+                                />
                                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                             </div>
                             
@@ -23,7 +42,7 @@ function Projects() {
                                 </div>
                                 {/* <p className='text-sm text-gray-700'>{project.description}</p> */}
                             </div>
-                        </div>
+                        </motion.div>
                     </a>
                 ))}
             </div>
