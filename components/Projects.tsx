@@ -1,27 +1,21 @@
 // import useStore from '../store';
 import { motion } from 'motion/react';
-import { useState } from 'react';
 
 function Projects() {
-    // const { openedProjects, toggleOpenedProject } = useStore();
-    const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
-
-    const handleImageLoad = (imageSrc: string) => {
-        setLoadedImages(prev => new Set(prev).add(imageSrc));
-    };
 
     return (
         <div className='text-sm flex flex-col secondary-font relative'>
             <p className='text-xs text-gray-500 italic!'>PROJECTS</p>
-            <div className='columns-1 md:columns-2 gap-6 mt-12'>
+            <div className='columns-1 md:columns-2 gap-6 mt-12 min-h-[530px]'>
                 {projects.map((project) => (
 
                     <a key={project.name} href={project.link ?? project.github ?? ""} target="_blank" rel="noopener noreferrer">
                         <motion.div
                             initial={{ y: 20, opacity: 0 }}
-                            animate={loadedImages.has(project.image) ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
-                            transition={{ duration: 0.5, ease: "easeOut" }}
-                            className={`flex flex-col hover:cursor-pointer break-inside-avoid mb-6`}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            viewport={{ once: true, amount: 0.1 }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+                            className={`flex flex-col break-inside-avoid hover:cursor-pointer mb-6`}
                         >
                             <div className="relative overflow-hidden group">
                                 <img 
@@ -29,8 +23,7 @@ function Projects() {
                                     alt={project.name} 
                                     className="object-cover w-full h-auto"
                                     loading="eager"
-                                    decoding="async"
-                                    onLoad={() => handleImageLoad(project.image)}
+                                    fetchPriority="high"
                                 />
                                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                             </div>
