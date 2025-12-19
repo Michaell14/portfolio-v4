@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { type Discussion } from '../types';
-import { FileText, ChevronLeft, ChevronRight } from 'lucide-react';
+import { FileText, ChevronLeft } from 'lucide-react';
 
 interface NotepadAppProps {
   discussions: Discussion[];

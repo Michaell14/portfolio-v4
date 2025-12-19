@@ -15,8 +15,8 @@ export const DesktopIcon: React.FC<DesktopIconProps> = ({ label, icon: Icon, onC
     >
       <div className="relative w-12 h-12 flex items-center justify-center">
         {/* Simple shadow effect for icon */}
-        <Icon size={48} className="absolute top-0.5 left-0.5 text-black opacity-50 transform scale-y-50 skew-x-12 origin-bottom" />
-        <Icon size={48} className={`relative z-10 text-white drop-shadow-md`} style={{ fill: color, stroke: 'black', strokeWidth: 1.5 }} />
+        <Icon width={48} height={48} className="absolute top-0.5 left-0.5 text-black opacity-50 transform scale-y-50 skew-x-12 origin-bottom" />
+        <Icon width={48} height={48} className={`relative z-10 text-white drop-shadow-md`} style={{ fill: color, stroke: 'black', strokeWidth: 1.5 }} />
       </div>
       <span className="text-white text-sm font-['VT323'] text-lg bg-[#008080] px-1 group-hover:bg-[#000080] group-focus:bg-[#000080] group-focus:border-dotted group-focus:border-white border border-transparent">
         {label}

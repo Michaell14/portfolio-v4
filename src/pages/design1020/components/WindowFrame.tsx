@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { X, Minus, Square } from 'lucide-react';
 
 interface WindowFrameProps {
@@ -18,7 +18,7 @@ interface WindowFrameProps {
 }
 
 export const WindowFrame: React.FC<WindowFrameProps> = ({
-  id,
+  id: _id,
   title,
   x,
   y,

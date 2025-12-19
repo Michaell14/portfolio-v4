@@ -172,7 +172,7 @@ export const DISCUSSIONS: Discussion[] = [
 ];
 
 export const PHOTOS: Photo[] = [
-  { id: 'ph1', url: 'https://picsum.photos/300/300?random=10', caption: 'Classroom sketch' },
-  { id: 'ph2', url: 'https://picsum.photos/300/300?random=11', caption: 'Whiteboard madness' },
-  { id: 'ph3', url: 'https://picsum.photos/300/300?random=12', caption: 'Late night coding' },
+  { id: 'ph1', url: '/design1020/IMG_3833.png', caption: 'Classroom sketch' },
+  { id: 'ph2', url: '/design1020/IMG_3877.png', caption: 'Whiteboard madness' },
+  { id: 'ph3', url: '/design1020/IMG_3903.png', caption: 'Late night coding' },
 ];

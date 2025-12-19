@@ -15,7 +15,7 @@ export const PortfolioApp: React.FC<PortfolioAppProps> = ({ projects }) => {
       </div>
       
       <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-6 overflow-y-auto">
-        {projects.map((project, idx) => (
+        {projects.map((project) => (
           <div key={project.id} className="border-2 border-black p-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all bg-[#f0f0f0]">
             <div className="bg-navy-900 border-b-2 border-black mb-2 relative group overflow-hidden h-32">
                 <img src={project.imageUrl} alt={project.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" />

@@ -1,10 +1,12 @@
-export enum AppId {
-  PORTFOLIO = 'portfolio',
-  NOTEPAD = 'notepad',
-  BIO = 'bio',
-  PHOTOS = 'photos',
-  TRASH = 'trash'
-}
+export const AppId = {
+  PORTFOLIO: 'portfolio',
+  NOTEPAD: 'notepad',
+  BIO: 'bio',
+  PHOTOS: 'photos',
+  TRASH: 'trash'
+} as const;
+
+export type AppId = typeof AppId[keyof typeof AppId];
 
 export interface WindowState {
   id: AppId;
