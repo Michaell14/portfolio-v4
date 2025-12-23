@@ -30,8 +30,8 @@ function Projects() {
                             
                             <div className = "mt-2">
                                 <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-1">
-                                    <p className='text-base lg:text-lg text-gray-700'>{project.name}</p>
-                                    <p className='text-gray-500 text-sm lg:text-base'>{project.context} · ({project.subdescription})</p>
+                                    <p className='text-sm text-gray-700'>{project.name}</p>
+                                    <p className='text-gray-500 text-sm'>{project.context} · ({project.subdescription})</p>
                                 </div>
                                 {/* <p className='text-sm text-gray-700'>{project.description}</p> */}
                             </div>

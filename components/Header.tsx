@@ -8,7 +8,7 @@ function Header() {
                 <div className="italic text-xs text-gray-500">
                     <p className="hover:text-gray-700">MICHAEL LI</p>
                     <p className="hover:text-gray-700"><a href="https://www.instagram.com/michaells19/" target="_blank" rel="noopener noreferrer">@michaells19</a></p>
-                    
+                   
                 </div>
             </div>
             
@@ -17,6 +17,7 @@ function Header() {
                     <p className="hover:text-gray-700"><a href="https://www.linkedin.com/in/itsmichaelli/" target="_blank" rel="noopener noreferrer">LINKEDIN</a></p>
                     <p className="hover:text-gray-700"><a href="https://github.com/Michaell14" target="_blank" rel="noopener noreferrer">GITHUB</a></p>
                     <p className="hover:text-gray-700"><a href="mailto:limichael319@gmail.com">EMAIL</a></p>
+                    {/* <p className="hover:text-gray-700"><a href="https://kaya-app.kayaclimb.com/user/limich19">KAYA</a></p> */}
                 </div>
             </div>
         </div>

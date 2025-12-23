@@ -1,26 +1,48 @@
 import { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
+import ExternalLink from './ExternalLink';
 
 const ImageToolTip = ({ text, imageUrl, imageAlt, color }: { text: string, imageUrl: string, imageAlt: string, color: string }) => {
     const [isHovered, setIsHovered] = useState(false);
     const type = useMemo(() => imageUrl.split('/').pop()?.split('.').shift(), [imageUrl]);
 
+    const isTextTooltip = type === "movie" || type === "learn";
+    const isImageTooltip = type === "me" || type === "climbing" || type === "music" || type === "travel" || type === "saigon" || type === "kensho";
+
     return (
-        <div className="relative inline-block"> {/* Essential for positioning the tooltip */}
+        <div 
+            className="relative inline-block"
+            onMouseEnter={isTextTooltip ? () => setIsHovered(true) : undefined}
+            onMouseLeave={isTextTooltip ? () => setIsHovered(false) : undefined}
+        >
             <motion.div
                 initial={{ color: color }}
-                whileHover={{ color: "red" }}
+                whileHover={{ color: "#ef4444" }}
                 transition={{ duration: .3 }}
             >
-                <span
+                <span 
                     className={`cursor-pointer underline`}
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
+                    onMouseEnter={isImageTooltip ? () => setIsHovered(true) : undefined}
+                    onMouseLeave={isImageTooltip ? () => setIsHovered(false) : undefined}
                 >
                     {text}
                 </span>
             </motion.div>
-            {isHovered && (type === "bridge" || type === "climbing" || type === "music" || type === "travel") && (
+            {/* Invisible bridge to maintain hover state across the gap - only for text tooltips */}
+            {isHovered && isTextTooltip && (
+                <div
+                    className="absolute z-0"
+                    style={{ 
+                        top: '100%', 
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        width: '600px',
+                        height: '10px',
+                        pointerEvents: 'auto'
+                    }}
+                />
+            )}
+            {isHovered && isImageTooltip && (
                 <div
                     className="absolute z-10 p-2 bg-white border border-gray-300 rounded shadow-lg"
                     style={{ top: 'calc(100% + 10px)', left: '50%', transform: 'translateX(-30%)' }} // Position below and center
@@ -28,7 +50,7 @@ const ImageToolTip = ({ text, imageUrl, imageAlt, color }: { text: string, image
                     <img src={imageUrl} alt={imageAlt} className="max-w-lg h-auto rounded max-h-[380px]" />
                 </div>
             )}
-            {isHovered && (type === "movie" || type === "learn") && (
+            {isHovered && isTextTooltip && (
                 <div
                     className="absolute z-10 p-2 bg-white border border-gray-300 rounded shadow-lg w-[500px] text-left"
                     style={{ top: 'calc(100% + 10px)', left: '50%', transform: 'translateX(-50%)' }} // Position below and center
@@ -38,11 +60,13 @@ const ImageToolTip = ({ text, imageUrl, imageAlt, color }: { text: string, image
                             <p className="text-sm font-bold italic mt-2">Some notable movies that I've watched are:</p>
                             <ul className='text-sm columns-2'>
                                 <li>Oldboy</li>
-                                <li>Saw</li>
-                                <li>How to make millions before grandma dies</li>
+                                <li>Saw (2004)</li>
+                                <li>Fantastic Mr. Fox</li>
                                 <li>The Shawshank Redemption</li>
                                 <li>The Devil Wears Prada</li>
                                 <li>3 Idiots</li>
+                                <li>Interstellar</li>
+                                <li>12 Angry Men</li>
                             </ul>
                             <p className="text-sm font-bold italic mt-2">I also love anime & manga:</p>
                             <ul className='text-sm columns-2'>
@@ -58,6 +82,8 @@ const ImageToolTip = ({ text, imageUrl, imageAlt, color }: { text: string, image
                                 <li>Jagaaan</li>
                                 <li>I Want to Eat Your Pancreas</li>
                             </ul>
+
+                            <p className="text-sm font-bold italic mt-2">My updated movie <ExternalLink href="https://www.notion.so/Movies-27d975c3c3298073adc4c06414a567ae?source=copy_link" color="#374151">list</ExternalLink></p>
                         </>
                     ) : (
                         <>

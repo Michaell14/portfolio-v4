@@ -1,7 +1,7 @@
 import Projects from '../components/Projects';
 import Footer from '../components/Footer';
-import Experience from '../components/Experience';
-import Community from '../components/Community';
+// import Experience from '../components/Experience';
+// import Community from '../components/Community';
 import Header from '../components/Header';
 import Profile from '../components/Profile';
 // import Sandbox from '../components/Sandbox';
@@ -18,16 +18,17 @@ function App() {
                     <Profile />
                     <hr className='horizontal-line mt-42 mb-5' />
                     <Projects />
-                    <hr className='horizontal-line mt-20 mb-5' />
+                    {/* <hr className='horizontal-line mt-20 mb-5' /> */}
 
-                    <Experience />
-                    <hr className='horizontal-line mt-32 mb-5' />
-                    <Community />
+                    {/* <Experience /> */}
+                    {/* <hr className='horizontal-line mt-32 mb-5' /> */}
+                    {/* <Community /> */}
                     
                     <Footer />
+                    <img src="home_ex/flower.gif" alt="ascii-animation" className='absolute max-h:1/5 sm:h-1/5 bottom-0 right-0 z-[-1]
+                lg:block' />
                 </div>
-                <img src="home_ex/ascii-animation-slow-invert2.gif" alt="ascii-animation" className='absolute h-1/5 -bottom-0 -right-10 z-[-1]
-                hidden lg:block' />
+                
 
             </div >
         </>
