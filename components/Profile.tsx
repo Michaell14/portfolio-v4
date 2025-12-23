@@ -113,15 +113,7 @@ function Profile() {
                 <TypewriterEffect className="text-4xl text-gray-900">
                     Hey, I'm <ImageToolTip text="Michael." imageUrl="assets/me.JPG" imageAlt="me" color="#0F172A" />
                 </TypewriterEffect>
-                        {/* <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .4, delay: .4 } }}
-                            viewport={{ once: true }}>
-                            <span className='text-lg lg:text-xl text-gray-700'>
-                            I'm studying CS <Superscript text="(w/ Design + Math)" size="text-sm" /> at UPenn, exploring design systems and building applications that people enjoy using.
-                            </span>
-
-                        </motion.div> */}
+                
                 <div className="mt-3">
                     
                 <motion.div
@@ -131,8 +123,12 @@ function Profile() {
                     variants={textRevealVariants}
                     viewport={{ once: true }}
                     >
-                    <span className="text-lg text-gray-700 inline-flex gap-2">
-                        <span
+                    <motion.span 
+                        className="text-lg text-gray-700 inline-flex gap-2"
+                        initial="rest"
+                        whileHover="hover"
+                    >
+                        <motion.span
                         style={{
                             width: '16px',
                             height: '16px',
@@ -142,11 +138,16 @@ function Profile() {
                             marginRight: '8px',
                             marginTop: '7px'
                         }}
+                        variants={{
+                            rest: { scale: 1 },
+                            hover: { scale: 1.2 }
+                        }}
+                        transition={{ type: "spring", stiffness: 400, damping: 17 }}
                         />
                         <span>
                         I'm studying CS <Superscript text="(w/ Design + Math)" size="text-sm" /> at UPenn
                         </span>
-                    </span>
+                    </motion.span>
                 </motion.div>
 
                 <motion.div
@@ -156,8 +157,12 @@ function Profile() {
                     variants={textRevealVariants}
                     viewport={{ once: true }}
                     >
-                    <span className="text-lg text-gray-700 inline-flex gap-2">
-                        <span
+                    <motion.span 
+                        className="text-lg text-gray-700 inline-flex gap-2"
+                        initial="rest"
+                        whileHover="hover"
+                    >
+                        <motion.span
                         style={{
                             width: '14px',
                             height: '14px',
@@ -167,6 +172,11 @@ function Profile() {
                             marginRight: '8px',
                             marginTop: '7px'
                         }}
+                        variants={{
+                            rest: { scale: 1 },
+                            hover: { scale: 1.2 }
+                        }}
+                        transition={{ type: "spring", stiffness: 400, damping: 17 }}
                         />
                         <span>
                             You can find me{' '}
@@ -175,7 +185,7 @@ function Profile() {
                             <ImageToolTip text="watching movies" imageUrl="assets/movie.jpg" imageAlt="films" color="#374151" />, and{' '}
                             <ImageToolTip text="learning a lot" imageUrl="assets/learn.jpg" imageAlt="learning" color="#374151" />!
                         </span>
-                    </span>
+                    </motion.span>
                 </motion.div>
 
                 <motion.div
@@ -185,8 +195,12 @@ function Profile() {
                     variants={textRevealVariants}
                     viewport={{ once: true }}
                     >
-                    <span className="text-lg text-gray-700 inline-flex gap-2">
-                        <span
+                    <motion.span 
+                        className="text-lg text-gray-700 inline-flex gap-2"
+                        initial="rest"
+                        whileHover="hover"
+                    >
+                        <motion.span
                         style={{
                             width: 0,
                             height: 0,
@@ -196,11 +210,16 @@ function Profile() {
                             marginRight: '8px',
                             marginTop: '7px'
                         }}
+                        variants={{
+                            rest: { scale: 1 },
+                            hover: { scale: 1.2 }
+                        }}
+                        transition={{ type: "spring", stiffness: 400, damping: 17 }}
                         />
                         <span>
                         Currently building an online co-op <ExternalLink href="https://www.minesweepercoop.com/">minesweeper</ExternalLink> game.
                         </span>
-                    </span>
+                    </motion.span>
                     </motion.div>
 
                 </div>  
@@ -228,30 +247,6 @@ function Profile() {
                     </motion.div>
                 </div>
             </div>
-
-            {/* <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .4, delay: 2.1 } }}
-                viewport={{ once: true }}>
-                <div className="flex h-[150px] lg:h-[200px] gap-4 mt-8 mb-20 overflow-x-scroll md:overflow-x-hidden">
-                    <img src="home_ex/china.jpg" alt="me" className="rounded-md" />
-                    <img src="home_ex/nice.webp" alt="me" className="rounded-md" />
-                    <img src="home_ex/meme.jpg" alt="me" className="rounded-md" />
-                </div>
-            </motion.div> */}
-                    
-
-                
-
-                {/* <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 100, duration: .4, delay: 1.2 } }}
-                    viewport={{ once: true }}>
-                    <span className='text-lg lg:text-xl text-gray-700'>
-                        Prev. at Kensho Technologies, Wealth.com, and Verizon.
-                    </span>
-                </motion.div> */}
-
             </div>
     )
 }
