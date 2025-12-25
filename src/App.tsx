@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Projects from '../components/Projects';
 import Footer from '../components/Footer';
 // import Experience from '../components/Experience';
@@ -8,7 +9,25 @@ import Profile from '../components/Profile';
 import { Analytics } from "@vercel/analytics/react"
 import './App.css'
 
+// Images to preload for ImageToolTip components
+// Using absolute paths to ensure they work regardless of current route
+const imagesToPreload = [
+    '/assets/me.JPG',
+    '/assets/climbing.gif',
+    '/assets/travel.webp',
+    '/assets/kensho.jpeg',
+    '/assets/saigon.JPG',
+];
+
 function App() {
+    useEffect(() => {
+        // Preload all images used in ImageToolTip components
+        imagesToPreload.forEach((imageSrc) => {
+            const img = new Image();
+            img.src = imageSrc;
+        });
+    }, []);
+
     return (
         <>
             <Analytics />
@@ -25,7 +44,7 @@ function App() {
                     {/* <Community /> */}
                     
                     <Footer />
-                    <img src="home_ex/flower.gif" alt="ascii-animation" className='absolute max-h:1/5 sm:h-1/5 bottom-0 right-0 z-[-1]
+                    <img src="home_ex/flower.gif" alt="ascii-animation" className='absolute max-h:1/5 sm:h-1/6 bottom-0 right-0 z-[-1]
                 lg:block' />
                 </div>
                 

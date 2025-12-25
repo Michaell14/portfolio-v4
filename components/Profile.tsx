@@ -111,9 +111,9 @@ function Profile() {
                 
             <div className="max-w-full">
                 <TypewriterEffect className="text-4xl text-gray-900">
-                    Hey, I'm <ImageToolTip text="Michael." imageUrl="assets/me.JPG" imageAlt="me" color="#0F172A" />
+                    Hey, I'm <ImageToolTip text="Michael." imageUrl="assets/me.webp" imageAlt="me" color="#0F172A" />
                 </TypewriterEffect>
-                
+
                 <div className="mt-3">
                     
                 <motion.div
