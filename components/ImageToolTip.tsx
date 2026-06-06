@@ -1,16 +1,65 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef, useLayoutEffect, useCallback } from 'react';
 import { motion } from 'motion/react';
 import ExternalLink from './ExternalLink';
 
+// Minimum gap (px) we keep between the tooltip and the viewport edges.
+const VIEWPORT_PADDING = 12;
+
 const ImageToolTip = ({ text, imageUrl, imageAlt, color }: { text: string, imageUrl: string, imageAlt: string, color: string }) => {
     const [isHovered, setIsHovered] = useState(false);
+    const [leftOffset, setLeftOffset] = useState<number | null>(null);
+    const triggerRef = useRef<HTMLDivElement>(null);
+    const tooltipRef = useRef<HTMLDivElement>(null);
     const type = useMemo(() => imageUrl.split('/').pop()?.split('.').shift(), [imageUrl]);
 
     const isTextTooltip = type === "movie" || type === "learn";
     const isImageTooltip = type === "me" || type === "climbing" || type === "music" || type === "travel" || type === "saigon" || type === "kensho";
 
+    // Position the tooltip centered on the trigger, but clamp it so it never
+    // spills off the left/right of the viewport (important on mobile).
+    const positionTooltip = useCallback(() => {
+        const trigger = triggerRef.current;
+        const tooltip = tooltipRef.current;
+        if (!trigger || !tooltip) return;
+
+        const triggerRect = trigger.getBoundingClientRect();
+        const tooltipWidth = tooltip.offsetWidth;
+        const triggerCenter = triggerRect.left + triggerRect.width / 2;
+
+        // Desired left edge (in viewport coordinates) to center on the trigger.
+        let desiredLeft = triggerCenter - tooltipWidth / 2;
+
+        // Clamp within the viewport, leaving a small padding on each side.
+        const maxLeft = window.innerWidth - tooltipWidth - VIEWPORT_PADDING;
+        const minLeft = VIEWPORT_PADDING;
+        desiredLeft = Math.max(minLeft, Math.min(desiredLeft, maxLeft));
+
+        // Convert back to an offset relative to the trigger's left edge.
+        setLeftOffset(desiredLeft - triggerRect.left);
+    }, []);
+
+    useLayoutEffect(() => {
+        if (!isHovered) {
+            setLeftOffset(null);
+            return;
+        }
+        positionTooltip();
+        window.addEventListener('resize', positionTooltip);
+        window.addEventListener('scroll', positionTooltip, true);
+        return () => {
+            window.removeEventListener('resize', positionTooltip);
+            window.removeEventListener('scroll', positionTooltip, true);
+        };
+    }, [isHovered, positionTooltip]);
+
+    // While we haven't measured yet, fall back to centering and hide to avoid a flash.
+    const tooltipPositionStyle = leftOffset === null
+        ? { top: 'calc(100% + 10px)', left: '50%', transform: 'translateX(-50%)', visibility: 'hidden' as const }
+        : { top: 'calc(100% + 10px)', left: `${leftOffset}px` };
+
     return (
-        <div 
+        <div
+            ref={triggerRef}
             className="relative inline-block"
             onMouseEnter={isTextTooltip ? () => setIsHovered(true) : undefined}
             onMouseLeave={isTextTooltip ? () => setIsHovered(false) : undefined}
@@ -44,16 +93,18 @@ const ImageToolTip = ({ text, imageUrl, imageAlt, color }: { text: string, image
             )}
             {isHovered && isImageTooltip && (
                 <div
+                    ref={tooltipRef}
                     className="absolute z-10 p-2 bg-white border border-gray-300 rounded shadow-lg"
-                    style={{ top: 'calc(100% + 10px)', left: '50%', transform: 'translateX(-30%)' }} // Position below and center
+                    style={tooltipPositionStyle}
                 >
-                    <img src={imageUrl} alt={imageAlt} className="max-w-lg h-auto rounded max-h-[380px]" />
+                    <img src={imageUrl} alt={imageAlt} className="max-w-[min(32rem,calc(100vw-24px))] h-auto rounded max-h-[380px]" />
                 </div>
             )}
             {isHovered && isTextTooltip && (
                 <div
-                    className="absolute z-10 p-2 bg-white border border-gray-300 rounded shadow-lg w-[500px] text-left"
-                    style={{ top: 'calc(100% + 10px)', left: '50%', transform: 'translateX(-50%)' }} // Position below and center
+                    ref={tooltipRef}
+                    className="absolute z-10 p-2 bg-white border border-gray-300 rounded shadow-lg text-left"
+                    style={{ ...tooltipPositionStyle, width: 'min(500px, calc(100vw - 24px))' }}
                 >
                     {type === "movie" ? (
                         <>
