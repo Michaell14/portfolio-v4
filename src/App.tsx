@@ -12,7 +12,7 @@ import './App.css'
 // Images to preload for ImageToolTip components
 // Using absolute paths to ensure they work regardless of current route
 const imagesToPreload = [
-    '/assets/me.JPG',
+    '/assets/me.webp',
     '/assets/climbing.gif',
     '/assets/travel.webp',
     '/assets/kensho.jpeg',
@@ -44,7 +44,7 @@ function App() {
                     {/* <Community /> */}
 
                     <Footer />
-                    <img src="home_ex/flower.gif" alt="ascii-animation" className='absolute max-h:1/5 sm:h-1/6 bottom-0 right-0 z-[-1]
+                    <img src="home_ex/flower.gif" alt="ascii-animation" className='absolute max-h-[20%] sm:h-1/6 bottom-0 right-0 z-[-1]
                     lg:block' />
                 </div>
             </div >

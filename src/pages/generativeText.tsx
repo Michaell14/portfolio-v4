@@ -9,6 +9,10 @@ interface Block {
   color: string;
 }
 
+// Standard palette for random mode. Module scope so its identity is stable
+// across renders and it does not have to be an effect dependency.
+const palette = ["#F4D03F", "#E74C3C", "#3498DB", "#9B59B6", "#16A085", "#2C3E50", "#ECF0F1"];
+
 // --- EASTER EGG PATTERN DEFINITIONS ---
 // Strings represent colors: W=White, B=Black, P=Pink, R=Red, G=Green, U=Blue, Y=Yellow, .=Empty
 const PATTERNS: Record<string, string[][]> = {
@@ -63,9 +67,6 @@ const GenerativeText: React.FC = () => {
   const [inputText, setInputText] = useState<string>("Bauhaus");
   const [copied, setCopied] = useState(false);
   const seedRef = useRef<number>(100);
-
-  // Standard Palette for random mode
-  const palette = ["#F4D03F", "#E74C3C", "#3498DB", "#9B59B6", "#16A085", "#2C3E50", "#ECF0F1"];
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);

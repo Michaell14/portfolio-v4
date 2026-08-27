@@ -18,7 +18,6 @@ interface WindowFrameProps {
 }
 
 export const WindowFrame: React.FC<WindowFrameProps> = ({
-  id: _id,
   title,
   x,
   y,

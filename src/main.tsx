@@ -7,6 +7,7 @@ import IphoneCafe from './pages/iphonecafe.tsx';
 import ArtofTheWeb from './pages/artoftheweb.tsx';
 import GenerativeText from './pages/generativeText.tsx';
 import Design1020 from './pages/design1020.tsx';
+import NotFound from '../components/NotFound.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -17,6 +18,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/artoftheweb" element={<ArtofTheWeb />} />
         <Route path="/generativetext" element={<GenerativeText />} />
         <Route path="/design1020" element={<Design1020 />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
