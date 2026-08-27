@@ -1,22 +1,26 @@
-import { useEffect, useState } from 'react';
-import { motion } from 'motion/react';
+import { useEffect, useRef, useState } from 'react';
+import { motion, useInView } from 'motion/react';
 import ExternalLink from './ExternalLink';
 
 function Projects() {
     const [selected, setSelected] = useState(0);
     const active = projects[selected];
+    const sectionRef = useRef<HTMLDivElement>(null);
+    // This section is below the fold, so none of its screenshots belong in the
+    // initial page load. Once it comes into view we warm the ones that aren't
+    // on screen yet, so hovering down the list doesn't flash an empty pane.
+    const isNear = useInView(sectionRef, { once: true, margin: '400px' });
 
-    // The detail pane swaps on hover, so every screenshot has to already be in
-    // the browser cache by the time it's asked for — otherwise the pane flashes.
     useEffect(() => {
+        if (!isNear) return;
         projects.forEach(({ image }) => {
             const img = new Image();
             img.src = image;
         });
-    }, []);
+    }, [isNear]);
 
     return (
-        <div className='text-sm flex flex-col secondary-font relative'>
+        <div ref={sectionRef} className='text-sm flex flex-col secondary-font relative'>
             <p className='text-xs text-gray-500 italic!'>PROJECTS</p>
 
             <motion.div
@@ -71,8 +75,7 @@ function Projects() {
                             src={active.image}
                             alt={active.name}
                             className='w-full aspect-video object-contain object-left'
-                            loading='eager'
-                            fetchPriority='high'
+                            loading='lazy'
                         />
                         {/* Fixed floor so the section never changes height between projects. */}
                         <div className='min-h-32'>
@@ -119,7 +122,7 @@ const projects = [
         name: "Minesweeper Online Co-op",
         context: "Personal",
         description: "A free real-time multiplayer Minesweeper Co-op with 1k+ monthly users.",
-        image: "/assets/minesweeper.gif",
+        image: "/assets/minesweeper.webp",
         link: "https://www.minesweepercoop.com/",
         github: "https://github.com/Michaell14/Minesweeper-Co-op"
     },
@@ -127,7 +130,7 @@ const projects = [
         name: "PennPins",
         context: "SPARK",
         description: "A social exploration app designed to help students discover campus and connect with each other in real life.",
-        image: "/assets/pennpins2.png",
+        image: "/assets/pennpins2.webp",
         link: null,
         github: "https://github.com/Michaell14/explore-penn"
     },
@@ -151,7 +154,7 @@ const projects = [
         name: "Design 1020: Art of the Web",
         context: "Portfolio",
         description: "A portfolio of the projects I worked on during Design 1020.",
-        image: "/assets/d4.png",
+        image: "/assets/d4.webp",
         link: "https://www.itsmichael.dev/design1020",
         github: null
     },

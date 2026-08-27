@@ -21,7 +21,7 @@ function NotFound() {
                 </div>
 
                 <img
-                    src="/home_ex/flower.gif"
+                    src="/home_ex/flower.webp"
                     alt="ascii-animation"
                     className='absolute max-h-[20%] sm:h-1/6 bottom-0 right-0 z-[-1]'
                 />
