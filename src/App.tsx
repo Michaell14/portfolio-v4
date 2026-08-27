@@ -1,11 +1,8 @@
 import { useEffect } from 'react';
 import Projects from '../components/Projects';
 import Footer from '../components/Footer';
-// import Experience from '../components/Experience';
-// import Community from '../components/Community';
 import Header from '../components/Header';
 import Profile from '../components/Profile';
-// import Sandbox from '../components/Sandbox';
 import { Analytics } from "@vercel/analytics/react"
 import './App.css'
 
@@ -47,11 +44,6 @@ function App() {
                     <Profile />
                     <hr className='horizontal-line mt-42 mb-5' />
                     <Projects />
-                    {/* <hr className='horizontal-line mt-20 mb-5' /> */}
-
-                    {/* <Experience /> */}
-                    {/* <hr className='horizontal-line mt-32 mb-5' /> */}
-                    {/* <Community /> */}
 
                     <Footer />
                     <img src="home_ex/flower.webp" alt="ascii-animation" loading="lazy" className='absolute max-h-[20%] sm:h-1/6 bottom-0 right-0 z-[-1]
