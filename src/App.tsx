@@ -9,23 +9,33 @@ import Profile from '../components/Profile';
 import { Analytics } from "@vercel/analytics/react"
 import './App.css'
 
-// Images to preload for ImageToolTip components
-// Using absolute paths to ensure they work regardless of current route
+// Images behind the ImageToolTip hovers. None of them are needed to paint the
+// page, so they're fetched once the browser is idle rather than up front.
+// Absolute paths so they resolve the same regardless of the current route.
 const imagesToPreload = [
     '/assets/me.webp',
-    '/assets/climbing.gif',
+    '/assets/climbing.webp',
     '/assets/travel.webp',
-    '/assets/kensho.jpeg',
-    '/assets/saigon.JPG',
+    '/assets/kensho.webp',
+    '/assets/saigon.webp',
 ];
 
 function App() {
     useEffect(() => {
-        // Preload all images used in ImageToolTip components
-        imagesToPreload.forEach((imageSrc) => {
-            const img = new Image();
-            img.src = imageSrc;
-        });
+        const warm = () => {
+            imagesToPreload.forEach((imageSrc) => {
+                const img = new Image();
+                img.src = imageSrc;
+            });
+        };
+
+        // Safari only picked up requestIdleCallback in 16.4, so keep a fallback.
+        if (typeof window.requestIdleCallback === 'function') {
+            const handle = window.requestIdleCallback(warm, { timeout: 3000 });
+            return () => window.cancelIdleCallback(handle);
+        }
+        const handle = window.setTimeout(warm, 1500);
+        return () => window.clearTimeout(handle);
     }, []);
 
     return (
@@ -44,7 +54,7 @@ function App() {
                     {/* <Community /> */}
 
                     <Footer />
-                    <img src="home_ex/flower.gif" alt="ascii-animation" className='absolute max-h-[20%] sm:h-1/6 bottom-0 right-0 z-[-1]
+                    <img src="home_ex/flower.webp" alt="ascii-animation" loading="lazy" className='absolute max-h-[20%] sm:h-1/6 bottom-0 right-0 z-[-1]
                     lg:block' />
                 </div>
             </div >

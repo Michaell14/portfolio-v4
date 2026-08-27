@@ -14,7 +14,7 @@ const colors: Record<ColorType, string> = {
 
 const IMAGE_MAP: Record<string, string | null> = {
     'me': '/assets/me.jpg',
-    'climb': '/assets/climbing.gif',
+    'climb': '/assets/climbing.webp',
     'music': '/assets/music.jpg',
     'travel': '/assets/travel.jpg',
     'movie': null,
