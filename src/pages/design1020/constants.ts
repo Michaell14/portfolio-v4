@@ -28,15 +28,6 @@ export const INITIAL_WINDOWS = [
 export const PROJECTS: Project[] = [
   {
     id: 'p4',
-    title: 'Generative Bauhaus',
-    description: 'Text input creates Bauhaus-inspired patterns.',
-    imageUrl: '/design1020/s3a3.png',
-    sourceUrl: 'https://www.itsmichael.dev/generativeText',
-    tags: ['p5.js', 'Animation', 'Web Art'],
-    date: 'Dec 2025',
-  },
-  {
-    id: 'p4',
     title: 'Keep Up with Philly',
     description: 'An Applet on the latest news in Philadelphia.',
     imageUrl: '/design1020/s3a2.png',
