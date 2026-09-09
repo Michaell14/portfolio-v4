@@ -43,7 +43,7 @@ function App() {
                     <Header />
                     <Profile />
                     <Footer />
-                    <img src="home_ex/flower.webp" alt="ascii-animation" loading="lazy" className='absolute h-1/4 sm:h-[30%] w-auto bottom-0 right-0 z-[-1] lg:block' />
+                    <img src="home_ex/flower.webp" alt="ascii-animation" loading="lazy" className='absolute h-1/2 sm:h-[60%] w-auto bottom-0 right-0 z-[-1] lg:block' />
                 </div>
             </div >
         </>
