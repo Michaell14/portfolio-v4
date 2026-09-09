@@ -13,6 +13,7 @@ const imagesToPreload = [
     '/assets/climbing.webp',
     '/assets/travel.webp',
     '/assets/kensho.webp',
+    '/assets/robinhood.webp',
     '/assets/saigon.webp',
 ];
 
@@ -42,8 +43,7 @@ function App() {
                     <Header />
                     <Profile />
                     <Footer />
-                    <img src="home_ex/flower.webp" alt="ascii-animation" loading="lazy" className='absolute max-h-[20%] sm:h-1/6 bottom-0 right-0 z-[-1]
-                    lg:block' />
+                    <img src="home_ex/flower.webp" alt="ascii-animation" loading="lazy" className='absolute h-1/4 sm:h-[30%] w-auto bottom-0 right-0 z-[-1] lg:block' />
                 </div>
             </div >
         </>

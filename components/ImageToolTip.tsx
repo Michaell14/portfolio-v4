@@ -13,7 +13,7 @@ const ImageToolTip = ({ text, imageUrl, imageAlt, color }: { text: string, image
     const type = useMemo(() => imageUrl.split('/').pop()?.split('.').shift(), [imageUrl]);
 
     const isTextTooltip = type === "movie" || type === "learn";
-    const isImageTooltip = type === "me" || type === "climbing" || type === "music" || type === "travel" || type === "saigon" || type === "kensho";
+    const isImageTooltip = type === "me" || type === "climbing" || type === "music" || type === "travel" || type === "saigon" || type === "kensho" || type === "robinhood";
 
     // Position the tooltip centered on the trigger, but clamp it so it never
     // spills off the left/right of the viewport (important on mobile).

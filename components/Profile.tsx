@@ -237,7 +237,7 @@ function Profile() {
                         </span>
 
                         <ul className="text-gray-700 list-disc ml-6">
-                            <li>Developed software at <ImageToolTip text="Kensho Technologies," imageUrl="assets/kensho.webp" imageAlt="kensho" color="#374151" /> Wealth.com, and Verizon.</li>
+                            <li>Developed software at <ImageToolTip text="Robinhood" imageUrl="assets/robinhood.webp" imageAlt="Robinhood team gathering" color="#374151" />, <ImageToolTip text="Kensho Technologies" imageUrl="assets/kensho.webp" imageAlt="Kensho Technologies" color="#374151" />, Wealth.com, and Verizon.</li>
                             <li>Interned abroad in <ImageToolTip text="Ho Chi Minh City, Vietnam." imageUrl="assets/saigon.webp" imageAlt="vietnam" color="#374151" /></li>
                             <li>Managed logistics for <ExternalLink href="https://pennapps.com/">PennApps</ExternalLink>, the nation's first student-run college hackathon</li>
                             <li>Practiced <ExternalLink href="https://www.google.com/search?q=Sanda+martial+arts">Sanda</ExternalLink> for 7-8 years; now I love watching UFC and MMA.</li>
