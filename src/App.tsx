@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import Projects from '../components/Projects';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Profile from '../components/Profile';
@@ -42,9 +41,6 @@ function App() {
                 <div className='max-w-7xl mx-auto px-0 sm:px-8 mt-10 '>
                     <Header />
                     <Profile />
-                    <hr className='horizontal-line mt-42 mb-5' />
-                    <Projects />
-
                     <Footer />
                     <img src="home_ex/flower.webp" alt="ascii-animation" loading="lazy" className='absolute max-h-[20%] sm:h-1/6 bottom-0 right-0 z-[-1]
                     lg:block' />
