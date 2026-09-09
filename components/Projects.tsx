@@ -150,14 +150,6 @@ const projects = [
         link: null,
         github: "https://github.com/Michaell14/Arduino-Controller-for-Hotdog-Unity-Game"
     },
-    {
-        name: "Design 1020: Art of the Web",
-        context: "Portfolio",
-        description: "A portfolio of the projects I worked on during Design 1020.",
-        image: "/assets/d4.webp",
-        link: "https://www.itsmichael.dev/design1020",
-        github: null
-    },
 ]
 
 export default Projects
