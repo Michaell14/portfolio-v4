@@ -46,7 +46,7 @@ function App() {
                     {/* Sized by width on phones and capped by page height from sm up. Only one
                         dimension is ever fixed, so the browser keeps the image's aspect ratio
                         instead of squashing it against preflight's img max-width: 100%. */}
-                    <img src="home_ex/flower.webp" alt="ascii-animation" loading="lazy" className='absolute bottom-0 right-0 z-[-1] w-5/6 h-auto sm:w-auto sm:max-h-[45%]' />
+                    <img src="home_ex/flower.webp" alt="ascii-animation" loading="lazy" className='absolute bottom-0 right-0 z-[-1] w-full h-auto sm:w-auto sm:max-h-[45%]' />
                 </div>
             </div >
         </>
