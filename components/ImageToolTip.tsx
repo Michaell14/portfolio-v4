@@ -114,7 +114,7 @@ const ImageToolTip = ({ text, imageUrl, imageAlt, color }: { text: string, image
                                 <li>Saw (2004)</li>
                                 <li>Fantastic Mr. Fox</li>
                                 <li>The Shawshank Redemption</li>
-                                <li>The Devil Wears Prada</li>
+                                <li>The Hangover</li>
                                 <li>3 Idiots</li>
                                 <li>Interstellar</li>
                                 <li>12 Angry Men</li>
