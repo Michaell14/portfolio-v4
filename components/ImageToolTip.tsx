@@ -126,7 +126,7 @@ const ImageToolTip = ({ text, imageUrl, imageAlt, color }: { text: string, image
                                 <li>The Disastrous Life of Saiki K.</li>
                                 <li>High School Ouran Host Club</li>
                                 <li>Hunter x Hunter</li>
-                                <li>My Hero Academia</li>
+                                <li>Full metal alchemist</li>
                                 <li>Great Teacher Onizuka</li>
                                 <li>Vinland Saga</li>
                                 <li>Baki the Grappler</li>
