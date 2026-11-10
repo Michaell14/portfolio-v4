@@ -217,7 +217,7 @@ function Profile() {
                         transition={{ type: "spring", stiffness: 400, damping: 17 }}
                         />
                         <span>
-                        Currently building <ExternalLink href="https://www.kincontacts.com/">Kin</ExternalLink>, <ExternalLink href="https://pipkin-ten.vercel.app/">Pipkins</ExternalLink>, <ExternalLink href="https://buoy-ui.vercel.app/">Buoy</ExternalLink>, and an online co-op <ExternalLink href="https://www.minesweepercoop.com/">minesweeper</ExternalLink> game.
+                        Currently building <ExternalLink href="https://www.kincontacts.com/">Kin</ExternalLink>, <ExternalLink href="https://pipkin-npm.vercel.app/">Pipkins</ExternalLink>, <ExternalLink href="https://buoy-ui.vercel.app/">Buoy</ExternalLink>, and an online co-op <ExternalLink href="https://www.minesweepercoop.com/">minesweeper</ExternalLink> game.
                         </span>
                     </motion.span>
                     </motion.div>
