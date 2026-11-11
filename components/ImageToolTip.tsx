@@ -8,17 +8,12 @@ const VIEWPORT_PADDING = 12;
 // Photos that get a small chip ahead of their text. The chips are their own
 // pre-cropped thumbnails in /assets/chips (a few KB each), so they can paint
 // with the page without pulling in the full-size tooltip photos.
-const CHIP_TYPES = new Set(["me", "climbing", "travel", "robinhood", "kensho", "saigon"]);
+// "me" is left out on purpose: the name in the heading stays plain text.
+const CHIP_TYPES = new Set(["climbing", "travel", "robinhood", "kensho", "saigon"]);
 
 const chipVariants = {
     rest: { scale: 1, rotate: 0 },
     hover: { scale: 1.25, rotate: -6 },
-};
-
-// The portrait sits in the heading at twice the size, so it grows less to stay clear of the words either side.
-const portraitVariants = {
-    rest: { scale: 1, rotate: 0 },
-    hover: { scale: 1.12, rotate: -8 },
 };
 
 const ImageToolTip = ({ text, imageUrl, imageAlt, color }: { text: string, imageUrl: string, imageAlt: string, color: string }) => {
@@ -31,11 +26,6 @@ const ImageToolTip = ({ text, imageUrl, imageAlt, color }: { text: string, image
     const isTextTooltip = type === "movie" || type === "learn";
     const isImageTooltip = type === "me" || type === "climbing" || type === "music" || type === "travel" || type === "saigon" || type === "kensho" || type === "robinhood";
     const hasChip = type !== undefined && CHIP_TYPES.has(type);
-    // The portrait gets a round chip sized to the heading; the rest are small rounded squares.
-    const isPortrait = type === "me";
-    const chipShape = isPortrait
-        ? "w-[1em] h-[1em] mr-[0.24em] align-[-0.14em] rounded-full"
-        : "w-[1.15em] h-[1.15em] mr-[0.3em] align-[-0.24em] rounded";
 
     // Position the tooltip centered on the trigger, but clamp it so it never
     // spills off the left/right of the viewport (important on mobile).
@@ -106,8 +96,8 @@ const ImageToolTip = ({ text, imageUrl, imageAlt, color }: { text: string, image
                             alt=""
                             aria-hidden="true"
                             draggable={false}
-                            className={`inline-block object-cover bg-gray-200 ring-1 ring-gray-900/15 ${chipShape}`}
-                            variants={isPortrait ? portraitVariants : chipVariants}
+                            className="inline-block object-cover bg-gray-200 ring-1 ring-gray-900/15 w-[1.15em] h-[1.15em] mr-[0.3em] align-[-0.24em] rounded"
+                            variants={chipVariants}
                             transition={{ type: "spring", stiffness: 400, damping: 17 }}
                         />
                     )}
