@@ -2,8 +2,6 @@ import "../src/App.css"
 import { motion, useInView } from "motion/react";
 import ImageToolTip from "./ImageToolTip";
 import ExternalLink from "./ExternalLink";
-import PipkinsLink from "./PipkinsLink";
-import BuoyLink from "./BuoyLink";
 import { Children, isValidElement, useMemo, useRef } from "react";
 
 function Superscript({ text, size }: { text: string, size: string }) {
@@ -219,7 +217,7 @@ function Profile() {
                         transition={{ type: "spring", stiffness: 400, damping: 17 }}
                         />
                         <span>
-                        Currently building <ExternalLink href="https://www.kincontacts.com/">Kin</ExternalLink>, <PipkinsLink href="https://pipkin-npm.vercel.app/" />, <BuoyLink href="https://buoy-ui.vercel.app/" />, and an online co-op <ExternalLink href="https://www.minesweepercoop.com/">minesweeper</ExternalLink> game.
+                        Currently building products from 0→1 through <ExternalLink href="https://design-studio-68k4k6dnw-michaell14s-projects.vercel.app/">Fourteen</ExternalLink>.
                         </span>
                     </motion.span>
                     </motion.div>
