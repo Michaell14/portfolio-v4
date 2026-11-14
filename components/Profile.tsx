@@ -217,7 +217,7 @@ function Profile() {
                         transition={{ type: "spring", stiffness: 400, damping: 17 }}
                         />
                         <span>
-                        Currently building products from 0→1 through <ExternalLink href="https://design-studio-68k4k6dnw-michaell14s-projects.vercel.app/">Fourteen</ExternalLink>, my one-person design and engineering studio.
+                        Currently building products from 0→1 through <ExternalLink href="https://design-studio-68k4k6dnw-michaell14s-projects.vercel.app/">Fourteen</ExternalLink>.
                         </span>
                     </motion.span>
                     </motion.div>
