@@ -5,12 +5,12 @@ interface ExternalLinkProps {
     children: React.ReactNode;
     className?: string;
     color?: string;
-    // Shown ahead of the text, e.g. a product's logo. Sits outside the text
+    // Shown right after the text, e.g. a product's logo. Sits outside the text
     // span so the underline stays under the words only.
-    leading?: React.ReactNode;
+    trailing?: React.ReactNode;
 }
 
-const ExternalLink = ({ href, children, className = "", color, leading }: ExternalLinkProps) => {
+const ExternalLink = ({ href, children, className = "", color, trailing }: ExternalLinkProps) => {
     const defaultColor = "text-gray-700 hover:text-gray-900";
     const baseClasses = `underline inline-flex items-center gap-1 ${color ? "" : defaultColor} ${className}`;
     
@@ -22,8 +22,8 @@ const ExternalLink = ({ href, children, className = "", color, leading }: Extern
             className={baseClasses}
             style={color ? { color } : undefined}
         >
-            {leading}
             <span>{children}</span>
+            {trailing}
             <ExternalLinkIcon className="w-3 h-3" style={color ? { color } : undefined} />
         </a>
     );
