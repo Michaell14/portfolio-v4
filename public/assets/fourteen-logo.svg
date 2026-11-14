@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="mark-fill" cx="0.38" cy="0.32" r="0.75"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.22" stop-color="#FFCDEA"/><stop offset="0.55" stop-color="#86DB98"/><stop offset="0.82" stop-color="#86C3FF"/><stop offset="1" stop-color="#2F5BD3"/></radialGradient>
+    <filter id="mark-grain" filterUnits="userSpaceOnUse" x="0" y="0" width="200" height="200" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="3.2" numOctaves="1" seed="3" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix in="noise" type="saturate" values="0" result="grey"/>
+      <feComponentTransfer in="grey" result="soft">
+        <feFuncR type="linear" slope="0.4" intercept="0.74"/>
+        <feFuncG type="linear" slope="0.4" intercept="0.74"/>
+        <feFuncB type="linear" slope="0.4" intercept="0.74"/>
+        <feFuncA type="table" tableValues="1 1"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="soft" mode="multiply" result="grained"/>
+      <feComposite in="grained" in2="SourceGraphic" operator="in"/>
+    </filter>
+  </defs>
+  <circle cx="100" cy="100" r="88" fill="url(#mark-fill)" filter="url(#mark-grain)"/>
+</svg>
