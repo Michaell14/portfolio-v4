@@ -220,7 +220,7 @@ function Profile() {
                         Currently building products from 0→1 through <ExternalLink
                             href="https://design-studio-lime.vercel.app/"
                             // Decorative: the link text already names it.
-                            leading={<span aria-hidden="true" style={{ background: 'url(/assets/fourteen-logo.svg) left 35% / 16px 16px no-repeat', letterSpacing: '18px' }}>{'\u00A0'}</span>}
+                            leading={<img src="/assets/fourteen-logo.svg" alt="" aria-hidden="true" className="w-[18px] h-[18px] shrink-0 self-center" />}
                         >Fourteen</ExternalLink>.
                         </span>
                     </motion.span>
